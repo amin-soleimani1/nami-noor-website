@@ -8,10 +8,10 @@ const trustItems = [
 function TrustStrip() {
   return (
     <section aria-label="ویژگی‌های نامی نور" className="relative z-10 mt-auto border-t border-white/15 bg-[rgba(8,18,22,0.78)] text-white backdrop-blur-[8px] lg:absolute lg:inset-x-0 lg:bottom-0 lg:mt-0">
-      <div className="grid w-full grid-cols-2 px-5 sm:px-8 lg:h-[4.275rem] lg:grid-cols-4 lg:px-[3.5%]">
-        {trustItems.map((item, index) => <div key={item.title} className={`relative flex items-center gap-3 py-3 lg:justify-center lg:px-6 ${index > 1 ? 'border-t border-white/15 lg:border-t-0' : ''} ${index > 0 ? 'lg:before:absolute lg:before:right-0 lg:before:top-1/2 lg:before:h-10 lg:before:w-px lg:before:-translate-y-1/2 lg:before:bg-white/25' : ''}`}>
-          <svg viewBox="0 0 24 24" aria-hidden="true" className="size-9 shrink-0 fill-none stroke-[#f6ca48] stroke-[1.5]" strokeLinecap="round" strokeLinejoin="round">{item.icon}</svg>
-          <div><p className="text-[16.2px] font-bold leading-5 text-white">{item.title}</p><p className="mt-0.5 text-[13.5px] leading-5 text-white/65">{item.description}</p></div>
+      <div className="grid h-[5.5rem] w-full grid-cols-4 px-2 sm:px-8 lg:h-[4.275rem] lg:grid-cols-4 lg:px-[3.5%]">
+        {trustItems.map((item, index) => <div key={item.title} className={`relative flex flex-col items-center justify-center gap-1 px-1 py-2 text-center lg:flex-row lg:gap-3 lg:px-6 lg:py-3 lg:text-right lg:justify-center ${index > 0 ? 'before:absolute before:right-0 before:top-1/2 before:h-10 before:w-px before:-translate-y-1/2 before:bg-white/25' : ''}`}>
+          <svg viewBox="0 0 24 24" aria-hidden="true" className="size-7 shrink-0 fill-none stroke-[#f6ca48] stroke-[1.5] lg:size-9" strokeLinecap="round" strokeLinejoin="round">{item.icon}</svg>
+          <div><p className="text-[10px] font-bold leading-3 text-white lg:text-[16.2px] lg:leading-5">{item.title}</p><p className="hidden lg:mt-0.5 lg:block lg:text-[13.5px] lg:leading-5 lg:text-white/65">{item.description}</p></div>
         </div>)}
       </div>
     </section>

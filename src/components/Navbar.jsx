@@ -12,7 +12,7 @@ function Navbar() {
   return (
     <header className="relative z-10 h-16 border-b border-white/15 bg-[rgba(5,15,20,0.76)] text-white backdrop-blur-[8px]">
       <div className="relative mx-auto flex h-full w-full items-center px-5 sm:px-8 lg:px-[3.5%]">
-        <a href="#" className="shrink-0 text-[27px] font-black leading-none tracking-tight lg:absolute lg:right-[3.5%]" aria-label="نامی نور، صفحه اصلی">نامی <span className="text-[#f4c43c]">نور</span></a>
+        <a href="#" className="absolute left-1/2 shrink-0 -translate-x-1/2 text-[27px] font-black leading-none tracking-tight lg:right-[3.5%] lg:left-auto lg:translate-x-0" aria-label="نامی نور، صفحه اصلی">نامی <span className="text-[#f4c43c]">نور</span></a>
         <nav aria-label="ناوبری اصلی" className="absolute left-1/2 hidden -translate-x-1/2 lg:block">
           <ul className="flex items-center gap-9 text-[16.5px] font-semibold text-white/90">{navigationItems.map((item) => <li key={item}><a href="#" className="transition-colors hover:text-[#f4c43c]">{item}</a></li>)}</ul>
         </nav>
@@ -22,7 +22,7 @@ function Navbar() {
           </a>
           <button type="button" aria-label="جستجو" className="grid size-9 place-items-center text-white/95 transition-colors hover:text-[#f4c43c]"><SearchIcon /></button>
         </div>
-        <div className="mr-auto flex items-center gap-1 lg:hidden">
+        <div className="absolute inset-x-5 flex items-center justify-between sm:inset-x-8 lg:hidden">
           <button type="button" aria-label="جستجو" className="grid size-10 place-items-center"><SearchIcon /></button>
           <button type="button" aria-label="باز کردن منو" className="grid size-10 place-items-center"><MenuIcon /></button>
         </div>
