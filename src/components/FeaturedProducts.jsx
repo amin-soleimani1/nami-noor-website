@@ -28,9 +28,9 @@ function FeaturedProducts() {
   const scrollRail = (direction) => railRef.current?.scrollBy({ left: direction * 320, behavior: 'smooth' })
 
   return (
-    <section aria-labelledby="featured-products-title" className="relative overflow-hidden bg-[#f8f6f1] px-5 pb-14 pt-9 text-[#1b1d1d] before:pointer-events-none before:absolute before:inset-x-0 before:top-0 before:z-0 before:h-px before:shadow-[0_-8px_28px_rgba(0,0,0,0.075)] sm:px-8 lg:px-[3.5%] lg:pb-20 lg:pt-12">
+    <section aria-labelledby="featured-products-title" className="relative overflow-hidden bg-[#f8f6f1] px-5 pb-14 pt-9 text-[#1b1d1d] before:pointer-events-none before:absolute before:inset-x-0 before:top-0 before:z-0 before:h-px before:shadow-[0_-8px_28px_rgba(0,0,0,0.075)] sm:px-8 lg:px-[3.5%] lg:pb-20 lg:pt-12 lg:before:shadow-[0_-12px_34px_rgba(0,0,0,0.11)]">
       <div className="relative z-10 mx-auto max-w-[1240px]">
-        <header className="mb-5 flex flex-col items-start gap-2 lg:mb-7 lg:flex-row lg:items-end lg:justify-between lg:gap-5">
+        <header className="mb-5 flex flex-col items-start gap-2 lg:mb-6 lg:flex-row lg:items-end lg:justify-between lg:gap-5">
           <div>
             <p className="mb-1 text-[11px] font-bold tracking-[0.16em] text-[#b38218] lg:mb-2">FEATURED PRODUCTS</p>
             <h2 id="featured-products-title" className="text-2xl font-black tracking-[-0.035em] lg:text-[30px]">محصولات منتخب</h2>
@@ -48,17 +48,17 @@ function FeaturedProducts() {
 
         <div ref={railRef} tabIndex="0" aria-label="محصولات منتخب" className="-mx-5 flex snap-x snap-mandatory gap-4 overflow-x-auto px-5 pb-2 scroll-smooth [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:-mx-8 sm:px-8 lg:mx-0 lg:gap-5 lg:px-0">
           {products.map((product) => (
-            <a key={product.title} href="#" className="group flex min-h-[25rem] w-[82%] shrink-0 snap-start flex-col overflow-hidden rounded-xl border border-black/10 bg-[#fcfbf7] transition-colors duration-300 hover:border-black/20 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#a97812] lg:min-h-[27.5rem] lg:w-[calc((100%-3.75rem)/4)]">
-              <div className="flex h-48 items-center justify-center bg-[#f1f0ec] p-6 lg:h-52 lg:p-7">
+            <a key={product.title} href="#" className="group flex min-h-[25rem] w-[82%] shrink-0 snap-start flex-col overflow-hidden rounded-xl border border-black/10 bg-[#fcfbf7] transition-colors duration-300 hover:border-black/20 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#a97812] lg:min-h-[15rem] lg:w-[calc((100%-3.75rem)/4)]">
+              <div className="flex h-48 items-center justify-center bg-[#f1f0ec] p-6 lg:h-28 lg:bg-transparent lg:p-4">
                 <img src={product.image} alt={product.alt} className="size-full object-contain transition-transform duration-500 ease-out group-hover:scale-[1.02]" />
               </div>
-              <div className="flex flex-1 flex-col p-4 lg:p-5">
+              <div className="flex flex-1 flex-col p-4 lg:p-4">
                 <h3 className="text-[17px] font-black leading-6 text-[#202323] lg:text-[18px]">{product.title}</h3>
                 <p className="mt-1 text-[13px] text-[#676a69]">{product.model}</p>
-                <ul className="mt-4 flex flex-wrap gap-1.5" aria-label="مشخصات محصول">
+                <ul className="mt-4 flex flex-wrap gap-1.5 lg:mt-3" aria-label="مشخصات محصول">
                   {product.specs.map((spec) => <li key={spec} className="rounded-md bg-[#efeee9] px-2 py-1 text-[11px] font-semibold text-[#4d5150]">{spec}</li>)}
                 </ul>
-                <span className="mt-auto inline-flex items-center gap-2 pt-5 text-[13px] font-semibold text-[#3f4342] transition-colors group-hover:text-[#a97812]">مشاهده محصول <ArrowIcon className="text-[#b38218] transition-transform duration-300 group-hover:-translate-x-0.5" /></span>
+                <span className="mt-auto inline-flex items-center gap-2 pt-5 text-[13px] font-semibold text-[#3f4342] transition-colors group-hover:text-[#a97812] lg:pt-3">مشاهده محصول <ArrowIcon className="text-[#b38218] transition-transform duration-300 group-hover:-translate-x-0.5" /></span>
               </div>
             </a>
           ))}
