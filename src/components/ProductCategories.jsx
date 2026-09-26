@@ -30,15 +30,15 @@ function MobileCategoryCard({ category, className, horizontal = false }) {
 
 function ProductCategories() {
   return (
-    <section aria-labelledby="product-categories-title" className="relative overflow-x-clip bg-[#f6f3ed] px-5 pb-14 pt-7 text-[#1b1d1d] before:pointer-events-none before:absolute before:left-1/2 before:top-0 before:z-0 before:h-8 before:w-[112%] before:-translate-x-1/2 before:-translate-y-1/2 before:rounded-[50%] before:shadow-[0_12px_32px_rgba(0,0,0,0.22)] sm:px-8 lg:px-[3.5%] lg:pt-16 lg:pb-20 lg:overflow-visible lg:before:hidden">
+    <section aria-labelledby="product-categories-title" className="relative overflow-x-clip bg-[#f6f3ed] px-5 pb-14 pt-7 text-[#1b1d1d] before:pointer-events-none before:absolute before:left-1/2 before:top-0 before:z-0 before:h-8 before:w-[112%] before:-translate-x-1/2 before:-translate-y-1/2 before:rounded-[50%] before:shadow-[0_12px_32px_rgba(0,0,0,0.22)] sm:px-8 lg:px-[3.5%] lg:pt-16 lg:pb-10 lg:overflow-visible lg:before:hidden">
       <div className="relative z-10 mx-auto max-w-[1240px]">
-        <header className="mb-4 flex flex-col items-start gap-2 lg:mb-8 lg:flex-row lg:flex-wrap lg:items-end lg:justify-between lg:gap-5">
-          <div>
+        <header className="mb-4 flex flex-col items-start gap-2 lg:relative lg:mb-8 lg:block lg:text-center">
+          <div className="lg:mx-auto lg:w-fit">
             <p className="mb-1 text-[11px] font-bold tracking-[0.16em] text-[#b38218] lg:mb-2">PRODUCT CATEGORIES</p>
             <h2 id="product-categories-title" className="text-2xl font-black tracking-[-0.035em] lg:text-[31px]">دسته‌بندی محصولات</h2>
             <p className="mt-1 text-sm text-[#626565] lg:mt-2 lg:text-[15px]">راهکارهای روشنایی متناسب با هر فضا و کاربرد</p>
           </div>
-          <a href="#" className="inline-flex items-center gap-2 text-sm font-semibold text-[#484b4a] transition-colors hover:text-[#a97812] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#a97812]">مشاهده همه محصولات <ArrowIcon /></a>
+          <a href="#" className="inline-flex items-center gap-2 text-sm font-semibold text-[#484b4a] transition-colors hover:text-[#a97812] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#a97812] lg:absolute lg:bottom-0 lg:left-0">مشاهده همه محصولات <ArrowIcon /></a>
         </header>
 
         <div className="lg:hidden">
