@@ -1,3 +1,5 @@
+import namiNoorLogo from '../assets/brand/nami-noor-logo.png'
+
 const navigationItems = ['محصولات', 'راهکارها', 'کیفیت و استانداردها', 'درباره ما', 'تماس با ما']
 
 function SearchIcon() {
@@ -12,7 +14,7 @@ function Navbar() {
   return (
     <header className="relative z-10 h-16 border-b border-white/15 bg-[rgba(5,15,20,0.76)] text-white backdrop-blur-[8px]">
       <div className="relative mx-auto flex h-full w-full items-center px-5 sm:px-8 lg:px-[3.5%]">
-        <a href="#" className="absolute left-1/2 shrink-0 -translate-x-1/2 text-[27px] font-black leading-none tracking-tight lg:right-[3.5%] lg:left-auto lg:translate-x-0" aria-label="نامی نور، صفحه اصلی">نامی <span className="text-[#f4c43c]">نور</span></a>
+        <a href="#" className="absolute left-1/2 shrink-0 -translate-x-1/2 lg:right-[3.5%] lg:left-auto lg:translate-x-0" aria-label="نامی نور، صفحه اصلی"><img src={namiNoorLogo} alt="نامی نور" className="h-8 w-auto object-contain" /></a>
         <nav aria-label="ناوبری اصلی" className="absolute left-1/2 hidden -translate-x-1/2 lg:block">
           <ul className="flex items-center gap-9 text-[16.5px] font-semibold text-white/90">{navigationItems.map((item) => <li key={item}><a href="#" className="transition-colors hover:text-[#f4c43c]">{item}</a></li>)}</ul>
         </nav>
