@@ -5,10 +5,10 @@ import bulbImage from '../assets/products/bulb-20.jpeg'
 import streetlightImage from '../assets/products/streetlight-250.jpg'
 
 const products = [
-  { image: highbayImage, alt: 'چراغ سوله‌ای LED پارس اسکای ۲۰۰ وات', title: 'چراغ سوله‌ای LED', model: 'پارس اسکای ۲۰۰ وات', specs: ['200W', 'LED', 'کاربری صنعتی'] },
-  { image: projectorImage, alt: 'پروژکتور شبکه‌ای پارس اسکای ۱۵۰ وات', title: 'پروژکتور شبکه‌ای', model: 'پارس اسکای ۱۵۰ وات', specs: ['150W', 'IP66', 'فضای باز'] },
-  { image: bulbImage, alt: 'لامپ حبابی LED پارس اسکای ۲۰ وات', title: 'لامپ حبابی LED', model: 'پارس اسکای ۲۰ وات', specs: ['20W', 'سرپیچ استاندارد', 'روشنایی عمومی'] },
-  { image: streetlightImage, alt: 'چراغ خیابانی LED پارس اسکای ۲۵۰ وات', title: 'چراغ خیابانی LED', model: 'پارس اسکای ۲۵۰ وات', specs: ['250W', 'LED', 'معابر و محوطه‌ها'] },
+  { image: highbayImage, alt: 'چراغ سوله‌ای LED پارس اسکای ۲۰۰ وات', title: 'چراغ سوله‌ای LED', model: 'پارس اسکای ۲۰۰ وات', specs: ['200W', 'LED', 'کاربری صنعتی'], desktopImageClass: 'lg:max-h-[8.5rem] lg:max-w-[96%]' },
+  { image: projectorImage, alt: 'پروژکتور شبکه‌ای پارس اسکای ۱۵۰ وات', title: 'پروژکتور شبکه‌ای', model: 'پارس اسکای ۱۵۰ وات', specs: ['150W', 'IP66', 'فضای باز'], desktopImageClass: 'lg:max-h-[8.25rem] lg:max-w-full' },
+  { image: bulbImage, alt: 'لامپ حبابی LED پارس اسکای ۲۰ وات', title: 'لامپ حبابی LED', model: 'پارس اسکای ۲۰ وات', specs: ['20W', 'سرپیچ استاندارد', 'روشنایی عمومی'], desktopImageClass: 'lg:max-h-[8.5rem] lg:max-w-[92%]' },
+  { image: streetlightImage, alt: 'چراغ خیابانی LED پارس اسکای ۲۵۰ وات', title: 'چراغ خیابانی LED', model: 'پارس اسکای ۲۵۰ وات', specs: ['250W', 'LED', 'معابر و محوطه‌ها'], desktopImageClass: 'lg:max-h-[8rem] lg:max-w-full' },
 ]
 
 function ArrowIcon({ className = '' }) {
@@ -48,17 +48,17 @@ function FeaturedProducts() {
 
         <div ref={railRef} tabIndex="0" aria-label="محصولات منتخب" className="-mx-5 flex snap-x snap-mandatory gap-4 overflow-x-auto px-5 pb-2 scroll-smooth [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:-mx-8 sm:px-8 lg:mx-0 lg:gap-5 lg:px-0">
           {products.map((product) => (
-            <a key={product.title} href="#" className="group flex min-h-[25rem] w-[82%] shrink-0 snap-start flex-col overflow-hidden rounded-xl border border-black/10 bg-[#fcfbf7] transition-colors duration-300 hover:border-black/20 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#a97812] lg:min-h-[15rem] lg:w-[calc((100%-3.75rem)/4)]">
-              <div className="flex h-48 items-center justify-center bg-[#f1f0ec] p-6 lg:h-28 lg:bg-transparent lg:p-4">
-                <img src={product.image} alt={product.alt} className="size-full object-contain transition-transform duration-500 ease-out group-hover:scale-[1.02]" />
+            <a key={product.title} href="#" className="group flex min-h-[25rem] w-[82%] shrink-0 snap-start flex-col overflow-hidden rounded-xl border border-black/10 bg-[#fcfbf7] transition-colors duration-300 hover:border-black/20 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#a97812] lg:h-[15rem] lg:min-h-0 lg:w-[calc((100%-3.75rem)/4)]">
+              <div className="flex h-48 items-center justify-center bg-[#f1f0ec] p-6 lg:h-36 lg:bg-transparent lg:p-1">
+                <img src={product.image} alt={product.alt} className={`size-full object-contain transition-transform duration-500 ease-out group-hover:scale-[1.02] ${product.desktopImageClass}`} />
               </div>
-              <div className="flex flex-1 flex-col p-4 lg:p-4">
-                <h3 className="text-[17px] font-black leading-6 text-[#202323] lg:text-[18px]">{product.title}</h3>
-                <p className="mt-1 text-[13px] text-[#676a69]">{product.model}</p>
-                <ul className="mt-4 flex flex-wrap gap-1.5 lg:mt-3" aria-label="مشخصات محصول">
-                  {product.specs.map((spec) => <li key={spec} className="rounded-md bg-[#efeee9] px-2 py-1 text-[11px] font-semibold text-[#4d5150]">{spec}</li>)}
+              <div className="flex flex-1 flex-col p-4 lg:pb-2 lg:pt-0">
+                <h3 className="text-[17px] font-black leading-6 text-[#202323] lg:text-[18px] lg:leading-5">{product.title}</h3>
+                <p className="mt-1 text-[13px] text-[#676a69] lg:mt-0 lg:leading-4">{product.model}</p>
+                <ul className="mt-4 flex flex-wrap gap-1.5 lg:mt-1 lg:gap-1" aria-label="مشخصات محصول">
+                  {product.specs.map((spec) => <li key={spec} className="rounded-md bg-[#efeee9] px-2 py-1 text-[11px] font-semibold text-[#4d5150] lg:px-1.5 lg:py-0">{spec}</li>)}
                 </ul>
-                <span className="mt-auto inline-flex items-center gap-2 pt-5 text-[13px] font-semibold text-[#3f4342] transition-colors group-hover:text-[#a97812] lg:pt-3">مشاهده محصول <ArrowIcon className="text-[#b38218] transition-transform duration-300 group-hover:-translate-x-0.5" /></span>
+                <span className="mt-auto inline-flex items-center gap-2 pt-5 text-[13px] font-semibold text-[#3f4342] transition-colors group-hover:text-[#a97812] lg:pt-1 lg:leading-4">مشاهده محصول <ArrowIcon className="text-[#b38218] transition-transform duration-300 group-hover:-translate-x-0.5" /></span>
               </div>
             </a>
           ))}
