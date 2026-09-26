@@ -5,7 +5,7 @@ import TrustStrip from './TrustStrip'
 
 function Hero() {
   return (
-    <section aria-labelledby="hero-title" className="relative isolate flex flex-col overflow-hidden bg-[#071016] lg:block lg:h-[clamp(34rem,44vw,39rem)]">
+    <section aria-labelledby="hero-title" className="relative isolate flex flex-col overflow-hidden bg-[#071016] lg:block lg:h-[clamp(34rem,44vw,39rem)] lg:overflow-visible">
       <picture className="absolute inset-x-0 top-[3.25rem] -z-20 lg:inset-0">
         <source media="(min-width: 1024px)" srcSet={heroImage} />
         <img src={mobileHeroImage} alt="محصولات روشنایی نامی نور در محوطه یک کارخانه مدرن" className="h-auto w-full lg:size-full lg:object-cover lg:object-center" />
