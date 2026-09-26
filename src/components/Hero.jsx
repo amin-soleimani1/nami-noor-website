@@ -6,11 +6,11 @@ import TrustStrip from './TrustStrip'
 function Hero() {
   return (
     <section aria-labelledby="hero-title" className="relative isolate flex flex-col overflow-hidden bg-[#071016] lg:block lg:h-[clamp(34rem,44vw,39rem)]">
-      <picture className="absolute inset-x-0 top-16 -z-20 lg:inset-0">
+      <picture className="absolute inset-x-0 top-[3.25rem] -z-20 lg:inset-0">
         <source media="(min-width: 1024px)" srcSet={heroImage} />
         <img src={mobileHeroImage} alt="محصولات روشنایی نامی نور در محوطه یک کارخانه مدرن" className="h-auto w-full lg:size-full lg:object-cover lg:object-center" />
       </picture>
-      <div className="absolute inset-x-0 top-16 -z-10 aspect-[1137/709] w-full bg-[linear-gradient(180deg,rgba(4,12,16,0.42)_0%,rgba(4,12,16,0.06)_18%,rgba(4,12,16,0)_67%,rgba(7,16,22,0.12)_76%,rgba(7,16,22,0.58)_92%,#071016_100%)] lg:hidden" />
+      <div className="absolute inset-x-0 top-[3.25rem] -z-10 aspect-[1137/709] w-full bg-[linear-gradient(180deg,rgba(4,12,16,0.42)_0%,rgba(4,12,16,0.06)_18%,rgba(4,12,16,0)_67%,rgba(7,16,22,0.12)_76%,rgba(7,16,22,0.58)_92%,#071016_100%)] lg:hidden" />
       <div className="absolute inset-0 -z-10 hidden bg-[linear-gradient(90deg,rgba(4,12,16,0.20)_0%,rgba(4,12,16,0.06)_34%,rgba(4,12,16,0.72)_52%,rgba(4,12,16,0.99)_100%)] lg:block" />
       <Navbar />
       <div dir="ltr" className="flex w-full justify-center px-5 pb-5 pt-[calc(62.36vw+0.5rem)] sm:px-8 lg:absolute lg:inset-x-0 lg:top-16 lg:bottom-[5.6rem] lg:flex-1 lg:items-end lg:justify-end lg:px-[3.5%] lg:pb-10 lg:pt-0">

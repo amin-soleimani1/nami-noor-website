@@ -7,7 +7,7 @@ function SearchIcon() {
 }
 
 function MenuIcon() {
-  return <svg viewBox="0 0 24 24" aria-hidden="true" className="size-5 fill-none stroke-current stroke-[1.8]"><path d="M4 7h16M4 12h16M4 17h16" strokeLinecap="round" /></svg>
+  return <svg viewBox="0 0 24 24" aria-hidden="true" className="size-[23px] fill-none stroke-current stroke-[1.8]"><path d="M4 7h16M4 12h16M4 17h16" strokeLinecap="round" /></svg>
 }
 
 function Navbar() {
