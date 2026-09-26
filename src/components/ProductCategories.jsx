@@ -17,9 +17,9 @@ function ArrowIcon() {
 
 function ProductCategories() {
   return (
-    <section aria-labelledby="product-categories-title" className="bg-[#f6f3ed] px-5 py-14 text-[#1b1d1d] sm:px-8 lg:px-[3.5%] lg:py-20">
+    <section aria-labelledby="product-categories-title" className="bg-[#f6f3ed] px-5 py-14 text-[#1b1d1d] sm:px-8 lg:px-[3.5%] lg:pt-16 lg:pb-20">
       <div className="mx-auto max-w-[1240px]">
-        <header className="mb-8 flex flex-wrap items-end justify-between gap-5 lg:mb-10">
+        <header className="mb-8 flex flex-wrap items-end justify-between gap-5 lg:mb-8">
           <div>
             <p className="mb-2 text-[11px] font-bold tracking-[0.16em] text-[#b38218]">PRODUCT CATEGORIES</p>
             <h2 id="product-categories-title" className="text-2xl font-black tracking-[-0.035em] lg:text-[31px]">دسته‌بندی محصولات</h2>
