@@ -15,9 +15,9 @@ function ArrowIcon({ className = '' }) {
   return <svg viewBox="0 0 24 24" aria-hidden="true" className={`size-4 fill-none stroke-current stroke-[1.8] ${className}`}><path d="M5 12h13M13 7l5 5-5 5" strokeLinecap="round" strokeLinejoin="round" /></svg>
 }
 
-function RailControl({ direction, onClick, label }) {
+function RailControl({ direction, onClick, label, className = '' }) {
   return (
-    <button type="button" onClick={onClick} aria-label={label} className={`grid size-9 place-items-center rounded-full border border-black/10 bg-[#fcfbf7] text-[#303333] transition-colors hover:border-[#bd8b1e] hover:text-[#a97812] focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-[#a97812] ${direction === 'next' ? '' : 'rotate-180'}`}>
+    <button type="button" onClick={onClick} aria-label={label} className={`grid size-9 place-items-center rounded-full border border-black/10 bg-[#fcfbf7] text-[#303333] transition-colors hover:border-[#bd8b1e] hover:text-[#a97812] focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-[#a97812] ${direction === 'next' ? '' : 'rotate-180'} ${className}`}>
       <ArrowIcon />
     </button>
   )
@@ -39,29 +39,29 @@ function FeaturedProducts() {
           </div>
           <div className="hidden items-center gap-3 lg:flex">
             <a href="#" className="inline-flex items-center gap-2 text-sm font-semibold text-[#484b4a] transition-colors hover:text-[#a97812] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#a97812]">مشاهده همه محصولات <ArrowIcon /></a>
-            <div className="flex items-center gap-2" dir="ltr">
-              <RailControl direction="previous" label="نمایش محصولات قبلی" onClick={() => scrollRail(-1)} />
-              <RailControl direction="next" label="نمایش محصولات بعدی" onClick={() => scrollRail(1)} />
-            </div>
           </div>
         </header>
 
-        <div ref={railRef} tabIndex="0" aria-label="محصولات منتخب" className="-mx-5 flex snap-x snap-mandatory gap-4 overflow-x-auto px-5 pb-2 scroll-smooth [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:-mx-8 sm:px-8 lg:mx-0 lg:gap-5 lg:px-0">
-          {products.map((product) => (
-            <a key={product.title} href="#" className="group flex min-h-[25rem] w-[82%] shrink-0 snap-start flex-col overflow-hidden rounded-xl border border-black/10 bg-[#fcfbf7] transition-colors duration-300 hover:border-black/20 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#a97812] lg:h-[15rem] lg:min-h-0 lg:w-[calc((100%-3.75rem)/4)]">
+        <div className="relative">
+          <div ref={railRef} tabIndex="0" aria-label="محصولات منتخب" className="-mx-5 flex snap-x snap-mandatory gap-4 overflow-x-auto px-5 pb-2 scroll-smooth [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:-mx-8 sm:px-8 lg:mx-0 lg:justify-center lg:gap-5 lg:px-0">
+            {products.map((product) => (
+            <a key={product.title} href="#" className="group flex min-h-[25rem] w-[82%] shrink-0 snap-start flex-col overflow-hidden rounded-xl border border-black/10 bg-[#fcfbf7] transition-colors duration-300 hover:border-black/20 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#a97812] lg:h-[15rem] lg:min-h-0 lg:w-[calc((100%-3.75rem)/5)] lg:cursor-pointer">
               <div className="flex h-48 items-center justify-center bg-[#f1f0ec] p-6 lg:h-36 lg:bg-transparent lg:p-1">
                 <img src={product.image} alt={product.alt} className={`size-full object-contain transition-transform duration-500 ease-out group-hover:scale-[1.02] ${product.desktopImageClass}`} />
               </div>
-              <div className="flex flex-1 flex-col p-4 lg:pb-2 lg:pt-0">
+              <div className="flex flex-1 flex-col p-4 lg:pb-2 lg:pt-2">
                 <h3 className="text-[17px] font-black leading-6 text-[#202323] lg:text-[18px] lg:leading-5">{product.title}</h3>
-                <p className="mt-1 text-[13px] text-[#676a69] lg:mt-0 lg:leading-4">{product.model}</p>
-                <ul className="mt-4 flex flex-wrap gap-1.5 lg:mt-1 lg:gap-1" aria-label="مشخصات محصول">
+                <p className="mt-1 text-[13px] text-[#676a69] lg:leading-4">{product.model}</p>
+                <ul className="mt-4 flex flex-wrap gap-1.5 lg:mt-2 lg:gap-1" aria-label="مشخصات محصول">
                   {product.specs.map((spec) => <li key={spec} className="rounded-md bg-[#efeee9] px-2 py-1 text-[11px] font-semibold text-[#4d5150] lg:px-1.5 lg:py-0">{spec}</li>)}
                 </ul>
-                <span className="mt-auto inline-flex items-center gap-2 pt-5 text-[13px] font-semibold text-[#3f4342] transition-colors group-hover:text-[#a97812] lg:pt-1 lg:leading-4">مشاهده محصول <ArrowIcon className="text-[#b38218] transition-transform duration-300 group-hover:-translate-x-0.5" /></span>
+                <span className="mt-auto inline-flex items-center gap-2 pt-5 text-[13px] font-semibold text-[#3f4342] transition-colors group-hover:text-[#a97812] lg:hidden">مشاهده محصول <ArrowIcon className="text-[#b38218] transition-transform duration-300 group-hover:-translate-x-0.5" /></span>
               </div>
             </a>
-          ))}
+            ))}
+          </div>
+          <RailControl direction="next" label="نمایش محصولات بعدی" onClick={() => scrollRail(1)} className="absolute right-6 top-1/2 z-10 hidden -translate-y-1/2 lg:grid" />
+          <RailControl direction="previous" label="نمایش محصولات قبلی" onClick={() => scrollRail(-1)} className="absolute left-6 top-1/2 z-10 hidden -translate-y-1/2 lg:grid" />
         </div>
       </div>
     </section>
