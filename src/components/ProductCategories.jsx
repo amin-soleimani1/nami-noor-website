@@ -30,8 +30,8 @@ function MobileCategoryCard({ category, className, horizontal = false }) {
 
 function ProductCategories() {
   return (
-    <section aria-labelledby="product-categories-title" className="bg-[#f6f3ed] px-5 pb-14 pt-7 text-[#1b1d1d] sm:px-8 lg:px-[3.5%] lg:pt-16 lg:pb-20">
-      <div className="mx-auto max-w-[1240px]">
+    <section aria-labelledby="product-categories-title" className="relative bg-[#f6f3ed] px-5 pb-14 pt-7 text-[#1b1d1d] before:pointer-events-none before:absolute before:left-1/2 before:top-0 before:z-0 before:h-8 before:w-[112%] before:-translate-x-1/2 before:-translate-y-1/2 before:rounded-[50%] before:shadow-[0_12px_32px_rgba(0,0,0,0.22)] sm:px-8 lg:px-[3.5%] lg:pt-16 lg:pb-20 lg:before:hidden">
+      <div className="relative z-10 mx-auto max-w-[1240px]">
         <header className="mb-4 flex flex-col items-start gap-2 lg:mb-8 lg:flex-row lg:flex-wrap lg:items-end lg:justify-between lg:gap-5">
           <div>
             <p className="mb-1 text-[11px] font-bold tracking-[0.16em] text-[#b38218] lg:mb-2">PRODUCT CATEGORIES</p>
