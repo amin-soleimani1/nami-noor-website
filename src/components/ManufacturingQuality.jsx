@@ -29,9 +29,17 @@ function ArrowIcon() {
 
 function ManufacturingQuality() {
   return (
-    <section aria-labelledby="manufacturing-quality-title" className="relative overflow-hidden bg-[#10191b] px-5 py-14 text-white sm:px-8 lg:px-[3.5%] lg:py-24">
-      <div className="mx-auto grid max-w-[1240px] gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:gap-16">
-        <div className="order-2 lg:order-1">
+    <section aria-labelledby="manufacturing-quality-title" className="relative overflow-hidden bg-[#081216] px-5 py-14 text-white sm:px-8 lg:h-[clamp(30rem,35vw,34rem)] lg:px-0 lg:py-0">
+      <figure className="relative mb-10 overflow-hidden bg-[#10191b] lg:absolute lg:inset-0 lg:mb-0 lg:bg-transparent">
+        <div className="relative aspect-[16/10] lg:size-full">
+          <img src={manufacturingConceptImage} alt="تصویر مفهومی از فضای تولید و کنترل کیفیت" className="absolute inset-0 size-full object-contain object-left" />
+          <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(5,11,13,0.5)_0%,rgba(5,11,13,0.08)_58%,rgba(5,11,13,0.2)_100%)] lg:bg-[linear-gradient(to_right,rgba(8,18,22,0.02)_0%,rgba(8,18,22,0.15)_35%,rgba(8,18,22,0.72)_60%,rgba(8,18,22,0.94)_78%,#081216_100%)]" />
+          <figcaption className="absolute bottom-3 left-3 rounded-sm border border-white/10 bg-[#081216]/45 px-2.5 py-1 text-[10px] text-white/55 backdrop-blur-sm lg:bottom-6 lg:left-[3.5%]">تصویر مفهومی از فضای تولید</figcaption>
+        </div>
+      </figure>
+
+      <div className="relative z-10 mx-auto max-w-[1240px] lg:flex lg:h-full lg:items-center lg:justify-end">
+        <div className="lg:w-[43%] lg:pb-1">
           <p className="mb-2 text-[11px] font-bold tracking-[0.16em] text-[#d6a632]">PRODUCTION QUALITY</p>
           <h2 id="manufacturing-quality-title" className="max-w-xl text-[clamp(1.75rem,3vw,2.7rem)] font-black leading-[1.2] tracking-[-0.04em]">کیفیت در تمام مراحل تولید</h2>
           <p className="mt-4 max-w-xl text-[15px] leading-7 text-white/68 lg:text-base">از طراحی مهندسی‌شده تا ارزیابی نهایی محصول، رویکرد نامی نور بر دقت فنی، کیفیت پایدار و انتخاب راهکار مناسب برای هر کاربرد استوار است.</p>
@@ -52,14 +60,6 @@ function ManufacturingQuality() {
 
           <a href="#" className="mt-8 inline-flex items-center gap-2 border-b border-[#d6a632]/55 pb-1 text-sm font-semibold text-[#f0c85d] transition-colors hover:border-[#f0c85d] hover:text-[#ffe08a] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#f0c85d] lg:mt-10">بیشتر درباره ما <ArrowIcon /></a>
         </div>
-
-        <figure className="order-1 overflow-hidden rounded-xl border border-white/10 bg-[#152124] shadow-[0_18px_42px_rgba(0,0,0,0.28)] lg:order-2">
-          <div className="relative aspect-[16/10] lg:aspect-[16/11]">
-            <img src={manufacturingConceptImage} alt="تصویر مفهومی از فضای تولید و کنترل کیفیت" className="absolute inset-0 size-full object-cover" />
-            <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(5,11,13,0.5)_0%,rgba(5,11,13,0.08)_58%,rgba(5,11,13,0.2)_100%)]" />
-            <figcaption className="absolute bottom-4 right-4 rounded-md border border-white/15 bg-[#0e1719]/80 px-3 py-1.5 text-[11px] text-white/72 backdrop-blur-sm">تصویر مفهومی از فضای تولید</figcaption>
-          </div>
-        </figure>
       </div>
     </section>
   )
