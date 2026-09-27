@@ -30,7 +30,7 @@ function MobileCategoryCard({ category, className, horizontal = false }) {
 
 function ProductCategories() {
   return (
-    <section aria-labelledby="product-categories-title" className="relative overflow-x-clip bg-[#f6f3ed] px-5 pb-14 pt-7 text-[#1b1d1d] before:pointer-events-none before:absolute before:left-1/2 before:top-0 before:z-0 before:h-8 before:w-[112%] before:-translate-x-1/2 before:-translate-y-1/2 before:rounded-[50%] before:shadow-[0_12px_32px_rgba(0,0,0,0.22)] sm:px-8 lg:px-[3.5%] lg:pt-16 lg:pb-10 lg:overflow-visible lg:before:hidden">
+    <section aria-labelledby="product-categories-title" className="relative overflow-x-clip bg-[#f6f3ed] px-5 pb-14 pt-7 text-[#1b1d1d] before:pointer-events-none before:absolute before:left-1/2 before:top-0 before:z-0 before:h-8 before:w-[112%] before:-translate-x-1/2 before:-translate-y-1/2 before:rounded-[50%] before:shadow-[0_12px_32px_rgba(0,0,0,0.22)] sm:px-8 lg:px-[3.5%] lg:pt-16 lg:pb-10 lg:overflow-visible lg:before:block lg:before:inset-x-0 lg:before:top-0 lg:before:h-11 lg:before:w-auto lg:before:translate-x-0 lg:before:translate-y-0 lg:before:rounded-none lg:before:bg-[linear-gradient(180deg,rgba(0,0,0,0.22)_0%,rgba(0,0,0,0.10)_45%,transparent_100%)] lg:before:shadow-none lg:before:blur-[8px]">
       <div className="relative z-10 mx-auto max-w-[1240px]">
         <header className="mb-4 flex flex-col items-start gap-2 lg:relative lg:mb-8 lg:block lg:text-center">
           <div className="lg:mx-auto lg:w-fit">

@@ -30,7 +30,7 @@ function FeaturedProducts() {
   const scrollRail = (direction) => railRef.current?.scrollBy({ left: direction * 320, behavior: 'smooth' })
 
   return (
-    <section aria-labelledby="featured-products-title" className="relative overflow-hidden bg-[#f8f6f1] px-5 pb-14 pt-9 text-[#1b1d1d] before:pointer-events-none before:absolute before:inset-x-0 before:top-0 before:z-0 before:h-px before:shadow-[0_-8px_28px_rgba(0,0,0,0.075)] sm:px-8 lg:bg-[#f6f3ed] lg:px-[3.5%] lg:pb-20 lg:pt-8 lg:before:shadow-[0_-10px_30px_rgba(0,0,0,0.13)]">
+    <section aria-labelledby="featured-products-title" className="relative overflow-hidden bg-[#f8f6f1] px-5 pb-14 pt-9 text-[#1b1d1d] before:pointer-events-none before:absolute before:inset-x-0 before:top-0 before:z-0 before:h-px before:shadow-[0_-8px_28px_rgba(0,0,0,0.075)] sm:px-8 lg:bg-[#f6f3ed] lg:px-[3.5%] lg:pb-20 lg:pt-8 lg:before:h-11 lg:before:bg-[linear-gradient(180deg,rgba(0,0,0,0.19)_0%,rgba(0,0,0,0.08)_45%,transparent_100%)] lg:before:shadow-none lg:before:blur-[10px]">
       <div className="relative z-10 mx-auto max-w-[1240px]">
         <header className="mb-5 flex flex-col items-start gap-2 lg:relative lg:mb-6 lg:block lg:text-center">
           <div className="lg:mx-auto lg:w-fit">
