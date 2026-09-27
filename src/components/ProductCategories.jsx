@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from 'react'
 import cheraghImage from '../assets/categories/cheragh.png'
 import lampImage from '../assets/categories/lamp.png'
 import projectorImage from '../assets/categories/projector.png'
@@ -10,6 +11,28 @@ const categories = [
   { title: 'پنل‌ها', subtitle: 'روکار و توکار', image: panelImage, alt: 'پنل‌های روشنایی سقفی', mobilePosition: 'object-[43%_center]', desktopPosition: 'lg:object-center' },
   { title: 'ریسه‌های نواری', subtitle: 'نورپردازی خطی و دکوراتیو', image: riseImage, alt: 'ریسه LED نواری روشن', mobilePosition: 'object-[38%_center]', desktopPosition: 'lg:object-center' },
 ]
+
+function useTitleReveal() {
+  const titleRef = useRef(null)
+  const [isVisible, setIsVisible] = useState(() => typeof window === 'undefined' || window.matchMedia('(prefers-reduced-motion: reduce)').matches)
+
+  useEffect(() => {
+    const title = titleRef.current
+    if (!title || isVisible || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return undefined
+
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        setIsVisible(true)
+        observer.disconnect()
+      }
+    }, { threshold: 0.25 })
+
+    observer.observe(title)
+    return () => observer.disconnect()
+  }, [isVisible])
+
+  return [titleRef, isVisible]
+}
 
 function ArrowIcon() {
   return <svg viewBox="0 0 24 24" aria-hidden="true" className="size-4 fill-none stroke-current stroke-[1.8]"><path d="M5 12h13M13 7l5 5-5 5" strokeLinecap="round" strokeLinejoin="round" /></svg>
@@ -29,13 +52,15 @@ function MobileCategoryCard({ category, className, horizontal = false }) {
 }
 
 function ProductCategories() {
+  const [titleRef, isTitleVisible] = useTitleReveal()
+
   return (
     <section aria-labelledby="product-categories-title" className="relative overflow-x-clip bg-[#f6f3ed] px-5 pb-14 pt-7 text-[#1b1d1d] before:pointer-events-none before:absolute before:left-1/2 before:top-0 before:z-0 before:h-8 before:w-[112%] before:-translate-x-1/2 before:-translate-y-1/2 before:rounded-[50%] before:shadow-[0_12px_32px_rgba(0,0,0,0.22)] sm:px-8 lg:px-[3.5%] lg:pt-16 lg:pb-10 lg:overflow-visible lg:before:block lg:before:inset-x-0 lg:before:top-0 lg:before:h-11 lg:before:w-auto lg:before:translate-x-0 lg:before:translate-y-0 lg:before:rounded-none lg:before:bg-[linear-gradient(180deg,rgba(0,0,0,0.22)_0%,rgba(0,0,0,0.10)_45%,transparent_100%)] lg:before:shadow-none lg:before:blur-[8px]">
       <div className="relative z-10 mx-auto max-w-[1240px]">
         <header className="mb-4 flex flex-col items-center gap-2 text-center lg:relative lg:mb-8 lg:block">
           <div className="lg:mx-auto lg:w-fit">
             <p className="mb-1 text-[11px] font-bold tracking-[0.16em] text-[#b38218] lg:mb-2">PRODUCT CATEGORIES</p>
-            <h2 id="product-categories-title" className="text-2xl font-black tracking-[-0.035em] lg:text-[31px]">دسته‌بندی محصولات</h2>
+            <h2 ref={titleRef} id="product-categories-title" className="text-2xl font-black tracking-[-0.035em] lg:text-[31px]" style={{ opacity: isTitleVisible ? 1 : 0, transform: isTitleVisible ? 'translateY(0)' : 'translateY(16px)', textShadow: '0 2px 3px rgba(0,0,0,0.08), 0 6px 14px rgba(0,0,0,0.08)', transition: 'opacity 650ms cubic-bezier(0.22, 1, 0.36, 1), transform 650ms cubic-bezier(0.22, 1, 0.36, 1)' }}>دسته‌بندی محصولات</h2>
             <p className="mt-1 text-sm text-[#626565] lg:mt-2 lg:text-[15px]">راهکارهای روشنایی متناسب با هر فضا و کاربرد</p>
           </div>
           <a href="#" className="inline-flex items-center gap-2 text-sm font-semibold text-[#484b4a] transition-colors hover:text-[#a97812] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#a97812] lg:absolute lg:bottom-0 lg:left-0">مشاهده همه محصولات <ArrowIcon /></a>

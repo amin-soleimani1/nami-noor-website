@@ -1,4 +1,4 @@
-import { useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import highbayImage from '../assets/products/highbay-200.jpg'
 import projectorImage from '../assets/products/projector-150.jpg'
 import bulbImage from '../assets/products/bulb-20.jpeg'
@@ -6,12 +6,34 @@ import streetlightImage from '../assets/products/streetlight-250.jpg'
 import ledStripImage from '../assets/products/led-strip.png'
 
 const products = [
-  { image: highbayImage, alt: 'چراغ سوله‌ای LED پارس اسکای ۲۰۰ وات', title: 'چراغ سوله‌ای LED', model: 'پارس اسکای ۲۰۰ وات', specs: ['200W', 'LED', 'کاربری صنعتی'], desktopImageClass: 'lg:max-h-[8.5rem] lg:max-w-[96%]' },
-  { image: projectorImage, alt: 'پروژکتور شبکه‌ای پارس اسکای ۱۵۰ وات', title: 'پروژکتور شبکه‌ای', model: 'پارس اسکای ۱۵۰ وات', specs: ['150W', 'IP66', 'فضای باز'], desktopImageClass: 'lg:max-h-[8.25rem] lg:max-w-full' },
-  { image: bulbImage, alt: 'لامپ حبابی LED پارس اسکای ۲۰ وات', title: 'لامپ حبابی LED', model: 'پارس اسکای ۲۰ وات', specs: ['20W', 'سرپیچ استاندارد', 'روشنایی عمومی'], desktopImageClass: 'lg:max-h-[8.5rem] lg:max-w-[92%]' },
-  { image: streetlightImage, alt: 'چراغ خیابانی LED پارس اسکای ۲۵۰ وات', title: 'چراغ خیابانی LED', model: 'پارس اسکای ۲۵۰ وات', specs: ['250W', 'LED', 'معابر و محوطه‌ها'], desktopImageClass: 'lg:max-h-[8rem] lg:max-w-full' },
+  { image: highbayImage, alt: 'چراغ سوله‌ای LED پارس اسکای ۲۰۰ وات', title: 'چراغ سوله‌ای LED', model: 'پارس اسکای ۲۰۰ وات', specs: ['200W', 'LED', 'کاربری صنعتی'], mobileImageClass: 'max-lg:scale-[1.2]', desktopImageClass: 'lg:max-h-[8.5rem] lg:max-w-[96%]' },
+  { image: projectorImage, alt: 'پروژکتور شبکه‌ای پارس اسکای ۱۵۰ وات', title: 'پروژکتور شبکه‌ای', model: 'پارس اسکای ۱۵۰ وات', specs: ['150W', 'IP66', 'فضای باز'], mobileImageClass: 'max-lg:scale-[1.18]', desktopImageClass: 'lg:max-h-[8.25rem] lg:max-w-full' },
+  { image: bulbImage, alt: 'لامپ حبابی LED پارس اسکای ۲۰ وات', title: 'لامپ حبابی LED', model: 'پارس اسکای ۲۰ وات', specs: ['20W', 'سرپیچ استاندارد', 'روشنایی عمومی'], mobileImageClass: 'max-lg:scale-[1.22]', desktopImageClass: 'lg:max-h-[8.5rem] lg:max-w-[92%]' },
+  { image: streetlightImage, alt: 'چراغ خیابانی LED پارس اسکای ۲۵۰ وات', title: 'چراغ خیابانی LED', model: 'پارس اسکای ۲۵۰ وات', specs: ['250W', 'LED', 'معابر و محوطه‌ها'], mobileImageClass: 'max-lg:scale-[1.15]', desktopImageClass: 'lg:max-h-[8rem] lg:max-w-full' },
   { image: ledStripImage, alt: 'ریسه نواری LED پارس اسکای', title: 'ریسه نواری LED', model: 'پارس اسکای', specs: ['LED', 'نورپردازی دکوراتیو', 'انعطاف‌پذیر'], desktopImageClass: 'lg:max-h-[8.25rem] lg:max-w-full', desktopOnly: true },
 ]
+
+function useTitleReveal() {
+  const titleRef = useRef(null)
+  const [isVisible, setIsVisible] = useState(() => typeof window === 'undefined' || window.matchMedia('(prefers-reduced-motion: reduce)').matches)
+
+  useEffect(() => {
+    const title = titleRef.current
+    if (!title || isVisible || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return undefined
+
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        setIsVisible(true)
+        observer.disconnect()
+      }
+    }, { threshold: 0.25 })
+
+    observer.observe(title)
+    return () => observer.disconnect()
+  }, [isVisible])
+
+  return [titleRef, isVisible]
+}
 
 function ArrowIcon({ className = '' }) {
   return <svg viewBox="0 0 24 24" aria-hidden="true" className={`size-4 fill-none stroke-current stroke-[1.8] ${className}`}><path d="M5 12h13M13 7l5 5-5 5" strokeLinecap="round" strokeLinejoin="round" /></svg>
@@ -27,6 +49,7 @@ function RailControl({ direction, onClick, label, className = '' }) {
 
 function FeaturedProducts() {
   const railRef = useRef(null)
+  const [titleRef, isTitleVisible] = useTitleReveal()
   const scrollRail = (direction) => railRef.current?.scrollBy({ left: direction * 320, behavior: 'smooth' })
 
   return (
@@ -35,7 +58,7 @@ function FeaturedProducts() {
         <header className="mb-4 flex flex-col items-center gap-1 text-center lg:relative lg:mb-6 lg:block">
           <div className="lg:mx-auto lg:w-fit">
             <p className="mb-1 text-[11px] font-bold tracking-[0.16em] text-[#b38218] lg:mb-2">FEATURED PRODUCTS</p>
-            <h2 id="featured-products-title" className="text-2xl font-black tracking-[-0.035em] lg:text-[30px]">محصولات منتخب</h2>
+            <h2 ref={titleRef} id="featured-products-title" className="text-2xl font-black tracking-[-0.035em] lg:text-[30px]" style={{ opacity: isTitleVisible ? 1 : 0, transform: isTitleVisible ? 'translateY(0)' : 'translateY(16px)', textShadow: '0 2px 3px rgba(0,0,0,0.08), 0 6px 14px rgba(0,0,0,0.08)', transition: 'opacity 650ms cubic-bezier(0.22, 1, 0.36, 1), transform 650ms cubic-bezier(0.22, 1, 0.36, 1)' }}>محصولات منتخب</h2>
             <p className="mt-1 text-sm text-[#626565] lg:mt-2 lg:text-[15px]">منتخبی از محصولات نامی نور برای کاربردهای مختلف</p>
             <a href="#" className="mt-2 inline-flex items-center gap-2 text-sm font-semibold text-[#484b4a] transition-colors hover:text-[#a97812] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#a97812] lg:hidden">مشاهده همه محصولات <ArrowIcon /></a>
           </div>
@@ -48,8 +71,8 @@ function FeaturedProducts() {
           <div ref={railRef} tabIndex="0" aria-label="محصولات منتخب" className="-mx-5 flex snap-x snap-mandatory gap-3 overflow-x-auto px-5 pb-2 scroll-smooth [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:-mx-8 sm:px-8 lg:mx-0 lg:justify-center lg:gap-5 lg:px-0">
             {products.map((product) => (
             <a key={product.title} href="#" className={`group ${product.desktopOnly ? 'hidden lg:flex' : 'flex'} h-[14.375rem] min-h-0 w-[47%] shrink-0 snap-start flex-col overflow-hidden rounded-xl border border-black/[0.06] bg-white shadow-[0_2px_8px_rgba(0,0,0,0.025),0_10px_22px_rgba(0,0,0,0.065)] transition-colors duration-300 hover:border-black/20 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#a97812] lg:h-[15rem] lg:w-[calc((100%-5rem)/5)] lg:cursor-pointer lg:shadow-[0_2px_8px_rgba(0,0,0,0.025),0_12px_26px_rgba(0,0,0,0.07)] lg:transition-[border-color,box-shadow,background-color] lg:duration-300 lg:hover:border-black/[0.14] lg:hover:bg-white lg:hover:shadow-[0_2px_8px_rgba(0,0,0,0.03),0_14px_28px_rgba(0,0,0,0.085)]`}>
-              <div className="flex h-[6.25rem] items-center justify-center bg-white p-3 lg:h-36 lg:bg-transparent lg:p-1">
-                <img src={product.image} alt={product.alt} className={`size-full object-contain transition-transform duration-500 ease-out group-hover:scale-[1.02] lg:duration-300 ${product.desktopImageClass}`} />
+              <div className="flex h-[6.25rem] items-center justify-center overflow-hidden bg-white p-3 lg:h-36 lg:overflow-visible lg:bg-transparent lg:p-1">
+                <img src={product.image} alt={product.alt} className={`size-full object-contain transition-transform duration-500 ease-out group-hover:scale-[1.02] lg:duration-300 ${product.mobileImageClass ?? ''} ${product.desktopImageClass}`} />
               </div>
               <div className="flex flex-1 flex-col items-center p-3 text-center lg:items-stretch lg:px-4 lg:pb-2 lg:pt-2 lg:text-right">
                 <h3 className="text-[15px] font-black leading-5 text-[#202323] lg:text-[18px] lg:leading-5">{product.title}</h3>
