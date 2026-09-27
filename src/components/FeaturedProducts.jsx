@@ -30,9 +30,9 @@ function FeaturedProducts() {
   const scrollRail = (direction) => railRef.current?.scrollBy({ left: direction * 320, behavior: 'smooth' })
 
   return (
-    <section aria-labelledby="featured-products-title" className="relative overflow-hidden bg-[#f8f6f1] px-5 pb-14 pt-9 text-[#1b1d1d] before:pointer-events-none before:absolute before:inset-x-0 before:top-0 before:z-0 before:h-px before:shadow-[0_-8px_28px_rgba(0,0,0,0.075)] sm:px-8 lg:bg-[#e8e4dc] lg:px-[3.5%] lg:pb-20 lg:pt-8 lg:before:h-11 lg:before:bg-[linear-gradient(180deg,rgba(0,0,0,0.19)_0%,rgba(0,0,0,0.08)_45%,transparent_100%)] lg:before:shadow-none lg:before:blur-[10px]">
+    <section aria-labelledby="featured-products-title" className="relative overflow-hidden bg-[#e8e4dc] px-5 pb-14 pt-9 text-[#1b1d1d] before:pointer-events-none before:absolute before:inset-x-0 before:top-0 before:z-0 before:h-9 before:bg-[linear-gradient(180deg,rgba(0,0,0,0.16)_0%,rgba(0,0,0,0.06)_45%,transparent_100%)] before:shadow-none before:blur-[8px] sm:px-8 lg:px-[3.5%] lg:pb-20 lg:pt-8 lg:before:h-11 lg:before:bg-[linear-gradient(180deg,rgba(0,0,0,0.19)_0%,rgba(0,0,0,0.08)_45%,transparent_100%)] lg:before:blur-[10px]">
       <div className="relative z-10 mx-auto max-w-[1240px]">
-        <header className="mb-5 flex flex-col items-start gap-2 lg:relative lg:mb-6 lg:block lg:text-center">
+        <header className="mb-4 flex flex-col items-center gap-1 text-center lg:relative lg:mb-6 lg:block">
           <div className="lg:mx-auto lg:w-fit">
             <p className="mb-1 text-[11px] font-bold tracking-[0.16em] text-[#b38218] lg:mb-2">FEATURED PRODUCTS</p>
             <h2 id="featured-products-title" className="text-2xl font-black tracking-[-0.035em] lg:text-[30px]">محصولات منتخب</h2>
@@ -45,19 +45,19 @@ function FeaturedProducts() {
         </header>
 
         <div className="relative">
-          <div ref={railRef} tabIndex="0" aria-label="محصولات منتخب" className="-mx-5 flex snap-x snap-mandatory gap-4 overflow-x-auto px-5 pb-2 scroll-smooth [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:-mx-8 sm:px-8 lg:mx-0 lg:justify-center lg:gap-5 lg:px-0">
+          <div ref={railRef} tabIndex="0" aria-label="محصولات منتخب" className="-mx-5 flex snap-x snap-mandatory gap-3 overflow-x-auto px-5 pb-2 scroll-smooth [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:-mx-8 sm:px-8 lg:mx-0 lg:justify-center lg:gap-5 lg:px-0">
             {products.map((product) => (
-            <a key={product.title} href="#" className={`group ${product.desktopOnly ? 'hidden lg:flex' : 'flex'} min-h-[25rem] w-[82%] shrink-0 snap-start flex-col overflow-hidden rounded-xl border border-black/10 bg-[#fcfbf7] transition-colors duration-300 hover:border-black/20 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#a97812] lg:h-[15rem] lg:min-h-0 lg:w-[calc((100%-5rem)/5)] lg:cursor-pointer lg:border-black/[0.06] lg:bg-white lg:shadow-[0_2px_8px_rgba(0,0,0,0.025),0_12px_26px_rgba(0,0,0,0.07)] lg:transition-[border-color,box-shadow,background-color] lg:duration-300 lg:hover:border-black/[0.14] lg:hover:bg-white lg:hover:shadow-[0_2px_8px_rgba(0,0,0,0.03),0_14px_28px_rgba(0,0,0,0.085)]`}>
-              <div className="flex h-48 items-center justify-center bg-[#f1f0ec] p-6 lg:h-36 lg:bg-transparent lg:p-1">
+            <a key={product.title} href="#" className={`group ${product.desktopOnly ? 'hidden lg:flex' : 'flex'} min-h-[23rem] w-[79%] shrink-0 snap-start flex-col overflow-hidden rounded-xl border border-black/[0.06] bg-white shadow-[0_2px_8px_rgba(0,0,0,0.025),0_12px_26px_rgba(0,0,0,0.07)] transition-colors duration-300 hover:border-black/20 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#a97812] lg:h-[15rem] lg:min-h-0 lg:w-[calc((100%-5rem)/5)] lg:cursor-pointer lg:shadow-[0_2px_8px_rgba(0,0,0,0.025),0_12px_26px_rgba(0,0,0,0.07)] lg:transition-[border-color,box-shadow,background-color] lg:duration-300 lg:hover:border-black/[0.14] lg:hover:bg-white lg:hover:shadow-[0_2px_8px_rgba(0,0,0,0.03),0_14px_28px_rgba(0,0,0,0.085)]`}>
+              <div className="flex h-44 items-center justify-center bg-white p-5 lg:h-36 lg:bg-transparent lg:p-1">
                 <img src={product.image} alt={product.alt} className={`size-full object-contain transition-transform duration-500 ease-out group-hover:scale-[1.02] lg:duration-300 ${product.desktopImageClass}`} />
               </div>
-              <div className="flex flex-1 flex-col p-4 lg:pb-2 lg:pt-2">
+              <div className="flex flex-1 flex-col items-center p-4 text-center lg:items-stretch lg:pb-2 lg:pt-2 lg:text-right">
                 <h3 className="text-[17px] font-black leading-6 text-[#202323] lg:text-[18px] lg:leading-5">{product.title}</h3>
                 <p className="mt-1 text-[13px] text-[#676a69] lg:leading-4">{product.model}</p>
-                <ul className="mt-4 flex flex-wrap gap-1.5 lg:mt-2 lg:gap-1" aria-label="مشخصات محصول">
-                  {product.specs.map((spec) => <li key={spec} className="rounded-md bg-[#efeee9] px-2 py-1 text-[11px] font-semibold text-[#4d5150] lg:border lg:border-black/[0.03] lg:bg-[#f2f1ed] lg:px-1.5 lg:py-0">{spec}</li>)}
+                <ul className="mt-2 flex flex-wrap justify-center gap-1.5 lg:mt-2 lg:justify-start lg:gap-1" aria-label="مشخصات محصول">
+                  {product.specs.map((spec) => <li key={spec} className="rounded-md border border-black/[0.03] bg-[#f2f1ed] px-2 py-1 text-[11px] font-semibold text-[#4d5150] lg:px-1.5 lg:py-0">{spec}</li>)}
                 </ul>
-                <span className="mt-auto inline-flex items-center gap-2 pt-5 text-[13px] font-semibold text-[#3f4342] transition-colors group-hover:text-[#a97812] lg:hidden">مشاهده محصول <ArrowIcon className="text-[#b38218] transition-transform duration-300 group-hover:-translate-x-0.5" /></span>
+                <span className="hidden">مشاهده محصول <ArrowIcon /></span>
               </div>
             </a>
             ))}
