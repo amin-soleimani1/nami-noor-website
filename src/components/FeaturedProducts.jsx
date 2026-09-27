@@ -30,7 +30,7 @@ function FeaturedProducts() {
   const scrollRail = (direction) => railRef.current?.scrollBy({ left: direction * 320, behavior: 'smooth' })
 
   return (
-    <section aria-labelledby="featured-products-title" className="relative overflow-hidden bg-[#f8f6f1] px-5 pb-14 pt-9 text-[#1b1d1d] before:pointer-events-none before:absolute before:inset-x-0 before:top-0 before:z-0 before:h-px before:shadow-[0_-8px_28px_rgba(0,0,0,0.075)] sm:px-8 lg:bg-[#f6f3ed] lg:px-[3.5%] lg:pb-20 lg:pt-8 lg:before:h-11 lg:before:bg-[linear-gradient(180deg,rgba(0,0,0,0.19)_0%,rgba(0,0,0,0.08)_45%,transparent_100%)] lg:before:shadow-none lg:before:blur-[10px]">
+    <section aria-labelledby="featured-products-title" className="relative overflow-hidden bg-[#f8f6f1] px-5 pb-14 pt-9 text-[#1b1d1d] before:pointer-events-none before:absolute before:inset-x-0 before:top-0 before:z-0 before:h-px before:shadow-[0_-8px_28px_rgba(0,0,0,0.075)] sm:px-8 lg:bg-[#e8e4dc] lg:px-[3.5%] lg:pb-20 lg:pt-8 lg:before:h-11 lg:before:bg-[linear-gradient(180deg,rgba(0,0,0,0.19)_0%,rgba(0,0,0,0.08)_45%,transparent_100%)] lg:before:shadow-none lg:before:blur-[10px]">
       <div className="relative z-10 mx-auto max-w-[1240px]">
         <header className="mb-5 flex flex-col items-start gap-2 lg:relative lg:mb-6 lg:block lg:text-center">
           <div className="lg:mx-auto lg:w-fit">
@@ -47,7 +47,7 @@ function FeaturedProducts() {
         <div className="relative">
           <div ref={railRef} tabIndex="0" aria-label="محصولات منتخب" className="-mx-5 flex snap-x snap-mandatory gap-4 overflow-x-auto px-5 pb-2 scroll-smooth [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:-mx-8 sm:px-8 lg:mx-0 lg:justify-center lg:gap-5 lg:px-0">
             {products.map((product) => (
-            <a key={product.title} href="#" className={`group ${product.desktopOnly ? 'hidden lg:flex' : 'flex'} min-h-[25rem] w-[82%] shrink-0 snap-start flex-col overflow-hidden rounded-xl border border-black/10 bg-[#fcfbf7] transition-colors duration-300 hover:border-black/20 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#a97812] lg:h-[15rem] lg:min-h-0 lg:w-[calc((100%-5rem)/5)] lg:cursor-pointer`}>
+            <a key={product.title} href="#" className={`group ${product.desktopOnly ? 'hidden lg:flex' : 'flex'} min-h-[25rem] w-[82%] shrink-0 snap-start flex-col overflow-hidden rounded-xl border border-black/10 bg-[#fcfbf7] transition-colors duration-300 hover:border-black/20 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#a97812] lg:h-[15rem] lg:min-h-0 lg:w-[calc((100%-5rem)/5)] lg:cursor-pointer lg:border-white/70 lg:bg-white/70 lg:backdrop-blur-sm lg:shadow-[0_4px_18px_rgba(0,0,0,0.055)] lg:hover:border-white/80 lg:hover:bg-white/80`}>
               <div className="flex h-48 items-center justify-center bg-[#f1f0ec] p-6 lg:h-36 lg:bg-transparent lg:p-1">
                 <img src={product.image} alt={product.alt} className={`size-full object-contain transition-transform duration-500 ease-out group-hover:scale-[1.02] ${product.desktopImageClass}`} />
               </div>
@@ -55,7 +55,7 @@ function FeaturedProducts() {
                 <h3 className="text-[17px] font-black leading-6 text-[#202323] lg:text-[18px] lg:leading-5">{product.title}</h3>
                 <p className="mt-1 text-[13px] text-[#676a69] lg:leading-4">{product.model}</p>
                 <ul className="mt-4 flex flex-wrap gap-1.5 lg:mt-2 lg:gap-1" aria-label="مشخصات محصول">
-                  {product.specs.map((spec) => <li key={spec} className="rounded-md bg-[#efeee9] px-2 py-1 text-[11px] font-semibold text-[#4d5150] lg:px-1.5 lg:py-0">{spec}</li>)}
+                  {product.specs.map((spec) => <li key={spec} className="rounded-md bg-[#efeee9] px-2 py-1 text-[11px] font-semibold text-[#4d5150] lg:border lg:border-white/50 lg:bg-white/55 lg:px-1.5 lg:py-0">{spec}</li>)}
                 </ul>
                 <span className="mt-auto inline-flex items-center gap-2 pt-5 text-[13px] font-semibold text-[#3f4342] transition-colors group-hover:text-[#a97812] lg:hidden">مشاهده محصول <ArrowIcon className="text-[#b38218] transition-transform duration-300 group-hover:-translate-x-0.5" /></span>
               </div>
