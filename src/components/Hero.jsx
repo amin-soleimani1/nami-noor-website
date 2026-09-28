@@ -21,7 +21,7 @@ function Hero() {
 
       <Navbar />
 
-      <div className="relative z-10 flex flex-1 px-5 pt-20 sm:px-8 sm:pt-24 lg:absolute lg:inset-x-0 lg:top-16 lg:bottom-[4.275rem] lg:items-center lg:px-[5.5%] lg:pt-0">
+      <div className="relative z-10 flex flex-1 px-5 pt-12 sm:px-8 sm:pt-20 lg:absolute lg:inset-x-0 lg:top-16 lg:bottom-[4.275rem] lg:items-center lg:px-[5.5%] lg:pt-0">
         <div dir="rtl" className="max-w-[18rem] text-right sm:max-w-[24rem] lg:hidden">
           <h1
             className="hero-mobile-enter font-[Tahoma,sans-serif] text-[clamp(2rem,9vw,3rem)] font-black leading-[1.13] tracking-[-0.045em] text-[#faf9f5] sm:text-[clamp(2.7rem,7vw,4rem)] lg:text-[clamp(2.8rem,4vw,4.5rem)]"
@@ -29,15 +29,16 @@ function Hero() {
             روشنایی،<br />
             <span className="text-[#f6ca48]">از دل تولید</span>
           </h1>
-          <p className="hero-mobile-enter hero-enter-delayed mt-4 max-w-[19rem] text-[0.82rem] leading-6 text-white/75 sm:mt-5 sm:max-w-[22rem] sm:text-base sm:leading-8 lg:mt-6 lg:max-w-[25rem] lg:text-[1.05rem]">
-            طراحی و تولید محصولات روشنایی با تمرکز بر کیفیت و دوام
+          <p className="hero-mobile-enter hero-enter-delayed mt-2 max-w-[19rem] text-[0.82rem] leading-[18px] text-white/75 sm:mt-5 sm:max-w-[22rem] sm:text-base sm:leading-8 lg:mt-6 lg:max-w-[25rem] lg:text-[1.05rem]">
+            <span className="block">طراحی و تولید محصولات روشنایی</span>
+            <span className="block">با تمرکز بر کیفیت و دوام</span>
           </p>
           <a
             href="#product-categories-title"
-            className="hero-mobile-enter hero-enter-cta group mt-6 inline-flex min-h-10 items-center gap-2 rounded-full border border-[#f6ca48]/85 bg-black/10 py-1 pr-1.5 pl-4 text-[0.82rem] font-semibold text-[#faf9f5] transition-colors hover:border-[#f6ca48] hover:bg-black/20 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#f6ca48] sm:min-h-11 sm:px-5 sm:text-sm lg:mt-7 lg:min-h-12 lg:justify-center lg:rounded-none lg:border-[#f6ca48] lg:bg-[#f6ca48] lg:px-6 lg:text-[0.95rem] lg:font-bold lg:text-[#111416]"
+            className="hero-mobile-enter hero-enter-cta group mt-2 inline-flex min-h-[38px] items-center gap-1.5 rounded-full border border-[#f6ca48]/85 bg-black/10 py-0 pr-1.5 pl-3 text-[12px] font-semibold text-[#faf9f5] transition-colors hover:border-[#f6ca48] hover:bg-black/20 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#f6ca48] sm:min-h-10 sm:px-4 sm:text-[13px] lg:mt-7 lg:min-h-12 lg:justify-center lg:rounded-none lg:border-[#f6ca48] lg:bg-[#f6ca48] lg:px-6 lg:text-[0.95rem] lg:font-bold lg:text-[#111416]"
           >
             <span>مشاهده محصولات</span>
-            <span aria-hidden="true" className="grid size-8 place-items-center rounded-full bg-[#f6ca48] text-base text-[#111416] transition-transform duration-200 group-hover:-translate-x-1 sm:size-9 lg:hidden">←</span>
+            <span aria-hidden="true" className="grid size-[26px] place-items-center rounded-full bg-[#f6ca48] text-sm text-[#111416] transition-transform duration-200 group-hover:-translate-x-1 sm:size-7 lg:hidden">←</span>
           </a>
         </div>
         <div dir="rtl" className="hidden w-[clamp(22rem,32vw,31rem)] text-right lg:ml-auto lg:block">
