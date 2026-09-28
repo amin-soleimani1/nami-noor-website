@@ -32,7 +32,7 @@ function FeaturedProducts() {
   const scrollRail = (direction) => railRef.current?.scrollBy({ left: direction * 320, behavior: 'smooth' })
 
   return (
-    <section aria-labelledby="featured-products-title" className="relative overflow-hidden bg-[#f6f3ed] px-5 pb-14 pt-9 text-[#1b1d1d] sm:px-8 lg:px-[3.5%] lg:pb-20 lg:pt-8">
+    <section aria-labelledby="featured-products-title" className="relative -mt-12 overflow-hidden bg-[#f6f3ed] px-5 pb-14 pt-9 text-[#1b1d1d] sm:px-8 lg:-mt-10 lg:px-[3.5%] lg:pb-20 lg:pt-8">
       <div className="relative z-10 mx-auto max-w-[1240px]">
         <header ref={headerRef} className="mb-4 flex flex-col items-center gap-1 text-center lg:relative lg:mb-6 lg:block">
           <div className="lg:mx-auto lg:w-fit">

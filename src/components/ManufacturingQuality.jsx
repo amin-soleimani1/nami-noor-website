@@ -1,5 +1,3 @@
-import manufacturingConceptImage from '../assets/factory/manufacturing-concept.webp'
-
 const qualityPoints = [
   {
     title: 'کنترل کیفیت دقیق',
@@ -29,22 +27,12 @@ function ArrowIcon() {
 
 function ManufacturingQuality() {
   return (
-    <section aria-labelledby="manufacturing-quality-title" className="relative overflow-hidden bg-[#081216] px-5 py-14 text-white sm:px-8 lg:h-[clamp(30rem,35vw,34rem)] lg:px-0 lg:py-0">
-      <figure className="relative mb-10 overflow-hidden bg-[#10191b] lg:absolute lg:inset-y-0 lg:left-0 lg:mb-0 lg:w-[60%] lg:overflow-visible lg:bg-transparent">
-        <div className="relative aspect-[16/10] lg:size-full">
-          <img src={manufacturingConceptImage} alt="تصویر مفهومی از فضای تولید و کنترل کیفیت" className="absolute inset-0 size-full object-contain object-left" />
-          <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(5,11,13,0.5)_0%,rgba(5,11,13,0.08)_58%,rgba(5,11,13,0.2)_100%)] lg:hidden" />
-          <figcaption className="absolute bottom-3 left-3 rounded-sm border border-white/10 bg-[#081216]/45 px-2.5 py-1 text-[10px] text-white/55 backdrop-blur-sm lg:bottom-6 lg:left-[3.5%]">تصویر مفهومی از فضای تولید</figcaption>
-        </div>
-      </figure>
-
-      <div aria-hidden="true" className="pointer-events-none hidden lg:absolute lg:inset-y-0 lg:left-[25%] lg:block lg:w-[60%] lg:bg-[linear-gradient(to_right,rgba(8,18,22,0)_0%,rgba(8,18,22,0.03)_30%,rgba(8,18,22,0.2)_43%,rgba(8,18,22,0.62)_50%,rgba(8,18,22,0.84)_60%,rgba(8,18,22,0.96)_72%,#081216_95%,#081216_100%)]" />
-
-      <div className="relative z-10 mx-auto max-w-[1240px] lg:h-full">
-        <div className="lg:absolute lg:inset-y-0 lg:right-[3.5%] lg:flex lg:w-[42%] lg:flex-col lg:justify-center lg:pb-1">
+    <section aria-labelledby="manufacturing-quality-title" className="bg-[#eeebe4] px-5 py-14 text-[#1b1d1d] sm:px-8 lg:px-[3.5%] lg:py-20">
+      <div className="mx-auto max-w-[1240px]">
+        <div className="max-w-[42rem]">
           <p className="mb-2 text-[11px] font-bold tracking-[0.16em] text-[#d6a632]">PRODUCTION QUALITY</p>
           <h2 id="manufacturing-quality-title" className="max-w-xl text-[clamp(1.75rem,3vw,2.7rem)] font-black leading-[1.2] tracking-[-0.04em]">کیفیت در تمام مراحل تولید</h2>
-          <p className="mt-4 max-w-xl text-[15px] leading-7 text-white/68 lg:text-base">از طراحی مهندسی‌شده تا ارزیابی نهایی محصول، رویکرد نامی نور بر دقت فنی، کیفیت پایدار و انتخاب راهکار مناسب برای هر کاربرد استوار است.</p>
+          <p className="mt-4 max-w-xl text-[15px] leading-7 text-[#555957] lg:text-base">از طراحی مهندسی‌شده تا ارزیابی نهایی محصول، رویکرد نامی نور بر دقت فنی، کیفیت پایدار و انتخاب راهکار مناسب برای هر کاربرد استوار است.</p>
 
           <div className="mt-7 grid gap-x-6 gap-y-5 sm:grid-cols-2 lg:mt-9">
             {qualityPoints.map((point) => (
@@ -53,8 +41,8 @@ function ManufacturingQuality() {
                   <svg viewBox="0 0 24 24" aria-hidden="true" className="size-5 fill-none stroke-current stroke-[1.5]" strokeLinecap="round" strokeLinejoin="round">{point.icon}</svg>
                 </span>
                 <div>
-                  <h3 className="text-[15px] font-bold text-white">{point.title}</h3>
-                  <p className="mt-1 text-[12px] leading-5 text-white/58">{point.description}</p>
+                  <h3 className="text-[15px] font-bold text-[#202426]">{point.title}</h3>
+                  <p className="mt-1 text-[12px] leading-5 text-[#686b69]">{point.description}</p>
                 </div>
               </div>
             ))}
