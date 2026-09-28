@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --mobile-hero-text-start: 1050ms;
+  --mobile-hero-text-start: 350ms;
 }
 
 @keyframes hero-enter {
