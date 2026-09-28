@@ -6,12 +6,14 @@ const trustItems = [
 ]
 
 function TrustStrip() {
+  const [trustRef, isTrustVisible] = useRevealOnScroll()
+
   return (
-    <section aria-label="ویژگی‌های نامی نور" className="relative z-10 overflow-x-clip border-none bg-transparent text-[#202426] lg:overflow-visible lg:border-t lg:border-white/10 lg:bg-[rgba(15,21,23,0.78)] lg:text-white lg:backdrop-blur-[10px]">
+    <section ref={trustRef} aria-label="ویژگی‌های نامی نور" className="relative z-10 overflow-x-clip border-none bg-transparent text-[#202426] lg:overflow-visible lg:border-t lg:border-white/10 lg:bg-[rgba(15,21,23,0.78)] lg:text-white lg:backdrop-blur-[10px]">
       <div className="relative z-10 grid h-44 w-full grid-cols-2 px-2 sm:px-8 lg:h-[4.275rem] lg:grid-cols-4 lg:px-[3.5%]">
-        {trustItems.map((item, index) => <div key={item.title} className={`relative flex flex-col items-center justify-center gap-1 px-1 py-2 text-center lg:flex-row lg:gap-3 lg:px-6 lg:py-3 lg:text-right lg:justify-center ${index % 2 === 1 ? 'before:absolute before:right-0 before:top-1/2 before:h-10 before:w-px before:-translate-y-1/2 before:bg-black/10 lg:before:bg-white/15' : ''} ${index >= 2 ? 'after:absolute after:inset-x-0 after:top-0 after:h-px after:bg-black/10 lg:after:hidden' : ''} ${index > 0 ? 'lg:before:absolute lg:before:right-0 lg:before:top-1/2 lg:before:h-10 lg:before:w-px lg:before:-translate-y-1/2 lg:before:bg-white/15' : ''}`}>
-          <svg viewBox="0 0 24 24" aria-hidden="true" className="size-7 shrink-0 fill-none stroke-[#f6ca48] stroke-[1.5] lg:size-9" strokeLinecap="round" strokeLinejoin="round">{item.icon}</svg>
-          <div><p className="text-[10px] font-bold leading-3 text-[#202426] lg:text-[16.2px] lg:leading-5 lg:text-[#f8f4e9]">{item.title}</p><p className="hidden lg:mt-0.5 lg:block lg:text-[13.5px] lg:leading-5 lg:text-white/65">{item.description}</p></div>
+        {trustItems.map((item, index) => <div key={item.title} className={`reveal-item ${isTrustVisible ? 'is-visible' : ''} relative flex flex-col items-center justify-center gap-1 px-1 py-2 text-center lg:flex-row lg:gap-3 lg:px-6 lg:py-3 lg:text-right lg:justify-center ${index % 2 === 1 ? 'before:absolute before:right-0 before:top-1/2 before:h-10 before:w-px before:-translate-y-1/2 before:bg-black/10 lg:before:bg-white/15' : ''} ${index >= 2 ? 'after:absolute after:inset-x-0 after:top-0 after:h-px after:bg-black/10 lg:after:hidden' : ''} ${index > 0 ? 'lg:before:absolute lg:before:right-0 lg:before:top-1/2 lg:before:h-10 lg:before:w-px lg:before:-translate-y-1/2 lg:before:bg-white/15' : ''}`} style={{ '--reveal-delay': `${index * 80}ms` }}>
+          <svg viewBox="0 0 24 24" aria-hidden="true" className="size-[2.1rem] shrink-0 fill-none stroke-[#f6ca48] stroke-[1.5] lg:size-9" strokeLinecap="round" strokeLinejoin="round">{item.icon}</svg>
+          <div><p className="text-[12px] font-bold leading-4 text-[#202426] [text-shadow:0_2px_5px_rgba(0,0,0,0.12)] lg:text-[16.2px] lg:leading-5 lg:text-[#f8f4e9] lg:[text-shadow:none]">{item.title}</p><p className="hidden lg:mt-0.5 lg:block lg:text-[13.5px] lg:leading-5 lg:text-white/65">{item.description}</p></div>
         </div>)}
       </div>
     </section>
@@ -19,3 +21,4 @@ function TrustStrip() {
 }
 
 export default TrustStrip
+import useRevealOnScroll from '../hooks/useRevealOnScroll'
