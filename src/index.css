@@ -1,5 +1,11 @@
 @import "tailwindcss";
 
+:root {
+  --mobile-logo-entrance-duration: 900ms;
+  --mobile-hero-settle-pause: 150ms;
+  --mobile-hero-text-start: calc(var(--mobile-logo-entrance-duration) + var(--mobile-hero-settle-pause));
+}
+
 @keyframes hero-enter {
   from {
     opacity: 0;
@@ -37,7 +43,15 @@
 }
 
 .hero-mobile-enter {
-  animation: hero-mobile-enter 1152ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation: hero-mobile-enter 1152ms cubic-bezier(0.22, 1, 0.36, 1) var(--mobile-hero-text-start) both;
+}
+
+.hero-mobile-enter.hero-enter-delayed {
+  animation-delay: calc(var(--mobile-hero-text-start) + 110ms);
+}
+
+.hero-mobile-enter.hero-enter-cta {
+  animation-delay: calc(var(--mobile-hero-text-start) + 190ms);
 }
 
 @keyframes mobile-logo-enter {
@@ -53,7 +67,7 @@
 }
 
 .mobile-logo-enter {
-  animation: mobile-logo-enter 900ms cubic-bezier(0.22, 1, 0.36, 1) 1500ms both;
+  animation: mobile-logo-enter var(--mobile-logo-entrance-duration) cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 @media (min-width: 1024px) {
