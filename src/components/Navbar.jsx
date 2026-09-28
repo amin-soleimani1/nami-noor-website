@@ -12,15 +12,15 @@ function MenuIcon() {
 
 function Navbar() {
   return (
-    <header className="relative z-10 h-[3.25rem] border-b border-white/15 bg-[rgba(5,15,20,0.76)] text-white backdrop-blur-[8px] lg:h-16">
+    <header className="relative z-20 h-[3.25rem] border-b border-white/15 bg-[rgba(5,15,20,0.76)] text-white backdrop-blur-[8px] lg:absolute lg:inset-x-0 lg:top-0 lg:h-16 lg:border-none lg:bg-transparent lg:backdrop-blur-none">
       <div className="relative mx-auto flex h-full w-full items-center px-5 sm:px-8 lg:px-[3.5%]">
         <a href="#" className="absolute left-1/2 shrink-0 -translate-x-1/2 lg:right-[3.5%] lg:left-auto lg:translate-x-0" aria-label="نامی نور، صفحه اصلی"><img src={namiNoorLogo} alt="نامی نور" className="h-8 w-auto object-contain lg:h-[37px]" /></a>
         <nav aria-label="ناوبری اصلی" className="absolute left-1/2 hidden -translate-x-1/2 lg:block">
           <ul className="flex items-center gap-9 text-[16.5px] font-semibold text-white/90">{navigationItems.map((item) => <li key={item}><a href="#" className="transition-colors hover:text-[#f4c43c]">{item}</a></li>)}</ul>
         </nav>
         <div dir="ltr" className="absolute left-[3.5%] hidden items-center gap-3 lg:flex">
-          <a href="#" className="inline-flex h-9 items-center gap-2.5 rounded-[9px] bg-[#f6ca48] px-[18px] text-[16.5px] font-bold text-[#111416] transition-colors hover:bg-[#ffda6a]">
-            <span aria-hidden="true">←</span> مشاهده محصولات
+          <a href="#" className="inline-flex h-9 items-center gap-2 rounded-full border border-[#f6ca48]/85 bg-black/15 px-4 text-[14px] font-semibold text-[#f8f4e9] transition-colors hover:border-[#f6ca48] hover:bg-black/25 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#f6ca48]">
+            <span aria-hidden="true" className="text-[#f6ca48]">←</span> مشاهده کاتالوگ
           </a>
           <button type="button" aria-label="جستجو" className="grid size-9 place-items-center text-white/95 transition-colors hover:text-[#f4c43c]"><SearchIcon /></button>
         </div>
