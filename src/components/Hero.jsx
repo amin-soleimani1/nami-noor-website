@@ -1,28 +1,46 @@
-import heroImage from '../assets/hero/hero-main.png'
-import mobileHeroImage from '../assets/hero/hero-main_mobo.png'
+import desktopHeroImage from '../assets/hero/new_hero_p03.png'
+import mobileHeroImage from '../assets/hero/new_hero_mobo.png'
 import Navbar from './Navbar'
 import TrustStrip from './TrustStrip'
 
 function Hero() {
   return (
-    <section aria-labelledby="hero-title" className="relative isolate flex flex-col overflow-hidden bg-[#071016] max-lg:z-10 max-lg:overflow-visible lg:block lg:h-[clamp(34rem,44vw,39rem)] lg:overflow-visible">
-      <picture className="absolute inset-x-0 top-[3.25rem] -z-20 lg:inset-0">
-        <source media="(min-width: 1024px)" srcSet={heroImage} />
-        <img src={mobileHeroImage} alt="محصولات روشنایی نامی نور در محوطه یک کارخانه مدرن" className="h-auto w-full lg:size-full lg:object-cover lg:object-center" />
+    <section
+      aria-labelledby="hero-title"
+      className="relative isolate flex min-h-[43rem] flex-col overflow-hidden bg-[#071016] text-white sm:min-h-[47rem] lg:block lg:min-h-[clamp(31rem,33.4vw,43rem)]"
+    >
+      <picture className="absolute inset-x-0 top-0 -z-20 lg:inset-0">
+        <source media="(min-width: 1024px)" srcSet={desktopHeroImage} />
+        <img
+          src={mobileHeroImage}
+          alt="فرایند تولید محصولات روشنایی در کارخانه نامی نور"
+          className="h-auto w-full lg:size-full lg:object-cover lg:object-center"
+        />
       </picture>
-      <div className="absolute inset-x-0 top-[3.25rem] -z-10 aspect-[1137/709] w-full bg-[linear-gradient(180deg,rgba(4,12,16,0.42)_0%,rgba(4,12,16,0.06)_18%,rgba(4,12,16,0)_67%,rgba(7,16,22,0.12)_76%,rgba(7,16,22,0.58)_92%,#071016_100%)] lg:hidden" />
-      <div className="absolute inset-0 -z-10 hidden bg-[linear-gradient(90deg,rgba(4,12,16,0.20)_0%,rgba(4,12,16,0.06)_34%,rgba(4,12,16,0.72)_52%,rgba(4,12,16,0.99)_100%)] lg:block" />
+
       <Navbar />
-      <div dir="ltr" className="flex w-full justify-center px-5 pb-5 pt-[calc(62.36vw+0.5rem)] sm:px-8 lg:absolute lg:inset-x-0 lg:top-16 lg:bottom-[5.6rem] lg:flex-1 lg:items-end lg:justify-end lg:px-[3.5%] lg:pb-10 lg:pt-0">
-        <div dir="rtl" className="w-full max-w-[32rem] text-center lg:w-[35%] lg:max-w-[31rem] lg:text-right">
-          <h1 id="hero-title" className="font-[Tahoma,sans-serif] text-[clamp(1.7rem,7vw,2rem)] font-black leading-[1.15] tracking-[-0.045em] text-white [-webkit-text-stroke:0.25px_currentColor] whitespace-nowrap sm:text-5xl lg:whitespace-nowrap lg:text-[clamp(2.55rem,3.4vw,3.825rem)] lg:[-webkit-text-stroke:0px_currentColor]">راهکارهای روشنایی<br /><span className="text-[#f6ca48]">برای صنعت و زندگی</span></h1>
-          <p className="mt-3 mx-auto max-w-[21rem] whitespace-nowrap text-[13.5px] leading-[21px] text-white/82 sm:text-[19px] sm:leading-8 lg:mt-5 lg:mr-0 lg:ml-0 lg:h-[72px] lg:max-w-[29rem] lg:text-[19px] lg:leading-8 lg:whitespace-normal">طراحی و تولید انواع محصولات روشنایی LED<br />با کیفیت بالا برای فضاهای صنعتی و زندگی مدرن.</p>
-          <div className="mt-5 flex w-full flex-nowrap justify-center gap-3 lg:mt-7 lg:w-auto lg:flex-wrap lg:justify-start">
-            <a href="#" className="inline-flex h-[42px] basis-[58%] max-lg:order-1 items-center justify-center gap-2 whitespace-nowrap rounded-[9px] bg-[#f6ca48] px-3 text-[14px] font-bold text-[#111416] transition-colors hover:bg-[#ffda6a] sm:h-[65px] max-lg:sm:h-[62px] sm:px-9 sm:text-[21px] lg:basis-auto lg:flex-none"><span aria-hidden="true">←</span> مشاهده محصولات</a>
-            <a href="#" className="inline-flex h-[42px] max-lg:order-2 flex-1 items-center justify-center whitespace-nowrap rounded-[9px] border border-white/75 px-3 text-[14px] font-bold text-white transition-colors hover:bg-white/10 sm:h-[65px] max-lg:sm:h-[62px] sm:px-9 sm:text-[21px] lg:flex-none">درباره ما</a>
-          </div>
+
+      <div className="relative z-10 flex flex-1 px-5 pt-12 sm:px-8 sm:pt-16 lg:absolute lg:inset-x-0 lg:top-16 lg:bottom-[4.275rem] lg:items-center lg:px-[5.5%] lg:pt-0">
+        <div dir="rtl" className="max-w-[18rem] text-right sm:max-w-[24rem] lg:mr-auto lg:max-w-[29rem]">
+          <h1
+            id="hero-title"
+            className="hero-enter font-[Tahoma,sans-serif] text-[clamp(2rem,9vw,3rem)] font-black leading-[1.13] tracking-[-0.045em] text-[#faf9f5] sm:text-[clamp(2.7rem,7vw,4rem)] lg:text-[clamp(2.8rem,4vw,4.5rem)]"
+          >
+            روشنایی،<br />
+            <span className="text-[#f6ca48]">از دل تولید</span>
+          </h1>
+          <p className="hero-enter hero-enter-delayed mt-5 max-w-[18rem] text-[0.9rem] leading-7 text-white/75 sm:max-w-[22rem] sm:text-base sm:leading-8 lg:mt-6 lg:max-w-[25rem] lg:text-[1.05rem]">
+            طراحی و تولید محصولات روشنایی با تمرکز بر کیفیت و دوام
+          </p>
+          <a
+            href="#product-categories-title"
+            className="hero-enter hero-enter-cta mt-7 inline-flex min-h-12 items-center justify-center border border-[#f6ca48] bg-[#f6ca48] px-6 text-[0.95rem] font-bold text-[#111416] transition-colors hover:bg-[#ffda6a] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#f6ca48] sm:min-h-14 sm:px-8 sm:text-base"
+          >
+            مشاهده محصولات
+          </a>
         </div>
       </div>
+
       <TrustStrip />
     </section>
   )
