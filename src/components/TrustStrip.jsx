@@ -1,3 +1,11 @@
+import { useEffect, useState } from 'react'
+import useRevealOnScroll from '../hooks/useRevealOnScroll'
+
+const HERO_PRIMARY_REVEAL_START = 1050
+const HERO_PRIMARY_REVEAL_DURATION = 1152
+const TRUST_REVEAL_PAUSE = 150
+const TRUST_REVEAL_ELIGIBLE_AT = HERO_PRIMARY_REVEAL_START + HERO_PRIMARY_REVEAL_DURATION + TRUST_REVEAL_PAUSE
+
 const trustItems = [
   { title: 'مصرف بهینه انرژی', description: 'روشنایی پایدار و کم‌مصرف', icon: <path d="M12 3C7 3.8 4 7.2 4 12c0 4.4 3.6 8 8 8 4.8 0 8.2-3 9-8-3.2 0-5.8 1-7.5 2.8C12.8 10.8 11.2 7.2 12 3Z M3 21c4.2-5.6 8.3-7.8 13.5-8.3" /> },
   { title: 'کیفیت مطمئن', description: 'استاندارد و بادوام', icon: <><path d="M12 3 19 6v5c0 4.7-2.8 8-7 10-4.2-2-7-5.3-7-10V6l7-3Z" /><path d="m8.7 12.1 2.1 2.1 4.5-4.6" /></> },
@@ -6,7 +14,15 @@ const trustItems = [
 ]
 
 function TrustStrip() {
-  const [trustRef, isTrustVisible] = useRevealOnScroll()
+  const [isHeroPrimaryComplete, setIsHeroPrimaryComplete] = useState(() => typeof window === 'undefined' || window.matchMedia('(min-width: 1024px), (prefers-reduced-motion: reduce)').matches)
+  const [trustRef, isTrustVisible] = useRevealOnScroll(0.2, isHeroPrimaryComplete)
+
+  useEffect(() => {
+    if (isHeroPrimaryComplete) return undefined
+
+    const timer = window.setTimeout(() => setIsHeroPrimaryComplete(true), TRUST_REVEAL_ELIGIBLE_AT)
+    return () => window.clearTimeout(timer)
+  }, [isHeroPrimaryComplete])
 
   return (
     <section ref={trustRef} aria-label="ویژگی‌های نامی نور" className="relative z-10 overflow-x-clip border-none bg-transparent text-[#202426] lg:overflow-visible lg:border-t lg:border-white/10 lg:bg-[rgba(15,21,23,0.78)] lg:text-white lg:backdrop-blur-[10px]">
@@ -21,4 +37,3 @@ function TrustStrip() {
 }
 
 export default TrustStrip
-import useRevealOnScroll from '../hooks/useRevealOnScroll'
