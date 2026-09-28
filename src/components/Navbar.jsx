@@ -1,4 +1,4 @@
-import namiNoorLogo from '../assets/brand/nami-noor-logo.png'
+import namiNoorLogo from '../assets/brand/nami-noor-logo.webp'
 
 const navigationItems = ['محصولات', 'راهکارها', 'کیفیت و استانداردها', 'درباره ما', 'تماس با ما']
 

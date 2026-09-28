@@ -1,9 +1,9 @@
 import useRevealOnScroll from '../hooks/useRevealOnScroll'
-import cheraghImage from '../assets/categories/cheragh.png'
-import lampImage from '../assets/categories/lamp.png'
-import projectorImage from '../assets/categories/projector.png'
-import panelImage from '../assets/categories/panel.png'
-import riseImage from '../assets/categories/rise.png'
+import cheraghImage from '../assets/categories/cheragh.webp'
+import lampImage from '../assets/categories/lamp.webp'
+import projectorImage from '../assets/categories/projector.webp'
+import panelImage from '../assets/categories/panel.webp'
+import riseImage from '../assets/categories/rise.webp'
 
 const categories = [
   { title: 'لامپ‌ها', subtitle: 'منابع نوری متنوع', image: lampImage, alt: 'دو لامپ روشن نامی نور', mobilePosition: 'object-[35%_center]', desktopPosition: 'lg:object-center' },

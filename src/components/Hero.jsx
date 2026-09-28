@@ -1,5 +1,5 @@
-import desktopHeroImage from '../assets/hero/new_hero_p03.png'
-import mobileHeroImage from '../assets/hero/new_hero_mobo.png'
+import desktopHeroImage from '../assets/hero/new_hero_p03.webp'
+import mobileHeroImage from '../assets/hero/new_hero_mobo.webp'
 import Navbar from './Navbar'
 
 function Hero() {

@@ -1,4 +1,4 @@
-import manufacturingConceptImage from '../assets/factory/manufacturing-concept.png'
+import manufacturingConceptImage from '../assets/factory/manufacturing-concept.webp'
 
 const qualityPoints = [
   {

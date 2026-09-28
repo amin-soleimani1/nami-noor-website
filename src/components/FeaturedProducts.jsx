@@ -1,10 +1,10 @@
 import { useRef } from 'react'
 import useRevealOnScroll from '../hooks/useRevealOnScroll'
-import highbayImage from '../assets/products/highbay-200.jpg'
-import projectorImage from '../assets/products/projector-150.jpg'
-import bulbImage from '../assets/products/bulb-20.jpeg'
-import streetlightImage from '../assets/products/streetlight-250.jpg'
-import ledStripImage from '../assets/products/led-strip.png'
+import highbayImage from '../assets/products/highbay-200.webp'
+import projectorImage from '../assets/products/projector-150.webp'
+import bulbImage from '../assets/products/bulb-20.webp'
+import streetlightImage from '../assets/products/streetlight-250.webp'
+import ledStripImage from '../assets/products/led-strip.webp'
 
 const products = [
   { image: highbayImage, alt: 'چراغ سوله‌ای LED پارس اسکای ۲۰۰ وات', title: 'چراغ سوله‌ای LED', model: 'پارس اسکای ۲۰۰ وات', specs: ['200W', 'LED', 'کاربری صنعتی'], mobileImageClass: 'max-lg:scale-[1.2]', desktopImageClass: 'lg:max-h-[8.5rem] lg:max-w-[96%]' },
