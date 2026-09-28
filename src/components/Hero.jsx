@@ -17,7 +17,7 @@ function Hero() {
           className="h-auto w-full lg:size-full lg:object-cover lg:object-center"
         />
       </picture>
-      <div aria-hidden="true" className="pointer-events-none absolute inset-y-0 right-0 -z-10 hidden w-1/2 bg-[linear-gradient(90deg,transparent_0%,rgba(5,10,12,0.10)_30%,rgba(5,10,12,0.40)_68%,rgba(5,10,12,0.65)_100%)] lg:block" />
+      <div aria-hidden="true" className="pointer-events-none absolute inset-y-0 right-0 -z-10 hidden w-1/2 bg-[linear-gradient(90deg,transparent_0%,rgba(5,10,12,0.14)_30%,rgba(5,10,12,0.60)_68%,rgba(5,10,12,0.82)_100%)] lg:block" />
 
       <Navbar />
 
