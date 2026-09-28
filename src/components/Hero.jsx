@@ -6,13 +6,14 @@ function Hero() {
   return (
     <section
       aria-label="معرفی نامی نور"
-      className="relative isolate flex aspect-[939/1354] min-h-0 flex-col overflow-hidden bg-[#071016] text-white lg:block lg:min-h-[clamp(31rem,33.4vw,43rem)] lg:aspect-auto"
+      className="relative isolate flex aspect-[939/1354] min-h-0 flex-col overflow-hidden bg-[#162328] text-white lg:block lg:min-h-[clamp(31rem,33.4vw,43rem)] lg:aspect-auto"
     >
       <picture className="absolute inset-x-0 top-0 -z-20 lg:inset-0">
         <source media="(min-width: 1024px)" srcSet={desktopHeroImage} />
         <img
           src={mobileHeroImage}
           alt="فرایند تولید محصولات روشنایی در کارخانه نامی نور"
+          fetchPriority="high"
           className="h-auto w-full lg:size-full lg:object-cover lg:object-center"
         />
       </picture>
