@@ -13,7 +13,7 @@
 }
 
 .hero-enter {
-  animation: hero-enter 700ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation: hero-enter 1120ms cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 .hero-enter-delayed {
@@ -37,13 +37,13 @@
 }
 
 .hero-mobile-enter {
-  animation: hero-mobile-enter 720ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation: hero-mobile-enter 1152ms cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 .reveal-item {
   opacity: 0;
   transform: translateY(20px);
-  transition: opacity 720ms cubic-bezier(0.22, 1, 0.36, 1), transform 720ms cubic-bezier(0.22, 1, 0.36, 1);
+  transition: opacity 1152ms cubic-bezier(0.22, 1, 0.36, 1), transform 1152ms cubic-bezier(0.22, 1, 0.36, 1);
   transition-delay: var(--reveal-delay, 0ms);
 }
 

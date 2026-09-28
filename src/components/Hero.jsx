@@ -38,7 +38,7 @@ function Hero() {
           href="#product-categories-title"
           className="hero-mobile-enter hero-enter-cta group absolute bottom-6 left-5 z-20 inline-flex min-h-[38px] items-center gap-1.5 rounded-full border border-[#f6ca48]/85 bg-black/10 py-0 pr-1.5 pl-3 text-[12px] font-semibold text-[#111416] transition-colors hover:border-[#f6ca48] hover:bg-black/20 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#f6ca48] sm:left-8 sm:min-h-10 sm:px-4 sm:text-[13px] lg:hidden"
         >
-          <span>مشاهده محصولات</span>
+          <span className="text-white [text-shadow:0_1px_3px_rgba(0,0,0,0.85)]">مشاهده محصولات</span>
           <span aria-hidden="true" className="grid size-[26px] place-items-center rounded-full bg-[#f6ca48] text-sm text-[#111416] transition-transform duration-200 group-hover:-translate-x-1 sm:size-7">←</span>
         </a>
         <div dir="rtl" className="hidden w-[clamp(22rem,32vw,31rem)] text-right lg:ml-auto lg:block">

@@ -36,7 +36,7 @@ function FeaturedProducts() {
       <div className="relative z-10 mx-auto max-w-[1240px]">
         <header ref={headerRef} className="mb-4 flex flex-col items-center gap-1 text-center lg:relative lg:mb-6 lg:block">
           <div className="lg:mx-auto lg:w-fit">
-            <p className={`reveal-item ${isHeaderVisible ? 'is-visible' : ''} mb-1 text-[11px] font-bold tracking-[0.16em] text-[#111416] lg:mb-2`}>FEATURED PRODUCTS</p>
+            <p className={`reveal-item ${isHeaderVisible ? 'is-visible' : ''} mb-1 text-[11px] font-bold tracking-[0.16em] text-[#b38218] lg:mb-2`}>FEATURED PRODUCTS</p>
             <h2 id="featured-products-title" className={`reveal-item ${isHeaderVisible ? 'is-visible' : ''} text-2xl font-black tracking-[-0.035em] lg:text-[30px]`} style={{ '--reveal-delay': '80ms' }}>محصولات منتخب</h2>
             <p className={`reveal-item ${isHeaderVisible ? 'is-visible' : ''} mt-1 text-sm text-[#626565] lg:mt-2 lg:text-[15px]`} style={{ '--reveal-delay': '160ms' }}>منتخبی از محصولات نامی نور برای کاربردهای مختلف</p>
             <a href="#" className={`reveal-item ${isHeaderVisible ? 'is-visible' : ''} mt-2 inline-flex items-center gap-2 text-sm font-semibold text-[#484b4a] transition-colors hover:text-[#a97812] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#a97812] lg:hidden`} style={{ '--reveal-delay': '240ms' }}>مشاهده همه محصولات <ArrowIcon /></a>
