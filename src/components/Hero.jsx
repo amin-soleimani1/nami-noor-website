@@ -1,13 +1,12 @@
 import desktopHeroImage from '../assets/hero/new_hero_p03.png'
 import mobileHeroImage from '../assets/hero/new_hero_mobo.png'
 import Navbar from './Navbar'
-import TrustStrip from './TrustStrip'
 
 function Hero() {
   return (
     <section
       aria-label="معرفی نامی نور"
-      className="relative isolate flex min-h-[43rem] flex-col overflow-hidden bg-[#071016] text-white sm:min-h-[47rem] lg:block lg:min-h-[clamp(31rem,33.4vw,43rem)]"
+      className="relative isolate flex aspect-[939/1354] min-h-0 flex-col overflow-hidden bg-[#071016] text-white lg:block lg:min-h-[clamp(31rem,33.4vw,43rem)] lg:aspect-auto"
     >
       <picture className="absolute inset-x-0 top-0 -z-20 lg:inset-0">
         <source media="(min-width: 1024px)" srcSet={desktopHeroImage} />
@@ -17,11 +16,12 @@ function Hero() {
           className="h-auto w-full lg:size-full lg:object-cover lg:object-center"
         />
       </picture>
+      <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-28 bg-[linear-gradient(180deg,rgba(5,10,12,0.35)_0%,transparent_100%)] lg:hidden" />
       <div aria-hidden="true" className="pointer-events-none absolute inset-y-0 right-0 -z-10 hidden w-1/2 bg-[linear-gradient(90deg,transparent_0%,rgba(5,10,12,0.14)_30%,rgba(5,10,12,0.60)_68%,rgba(5,10,12,0.82)_100%)] lg:block" />
 
       <Navbar />
 
-      <div className="relative z-10 flex flex-1 px-5 pt-12 sm:px-8 sm:pt-16 lg:absolute lg:inset-x-0 lg:top-16 lg:bottom-[4.275rem] lg:items-center lg:px-[5.5%] lg:pt-0">
+      <div className="relative z-10 flex flex-1 px-5 pt-[6.25rem] sm:px-8 sm:pt-[7.25rem] lg:absolute lg:inset-x-0 lg:top-16 lg:bottom-[4.275rem] lg:items-center lg:px-[5.5%] lg:pt-0">
         <div dir="rtl" className="max-w-[18rem] text-right sm:max-w-[24rem] lg:hidden">
           <h1
             className="hero-enter font-[Tahoma,sans-serif] text-[clamp(2rem,9vw,3rem)] font-black leading-[1.13] tracking-[-0.045em] text-[#faf9f5] sm:text-[clamp(2.7rem,7vw,4rem)] lg:text-[clamp(2.8rem,4vw,4.5rem)]"
@@ -60,10 +60,7 @@ function Hero() {
           </a>
         </div>
       </div>
-
-      <div className="lg:hidden">
-        <TrustStrip />
-      </div>
+      <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 bottom-0 z-10 h-12 bg-[linear-gradient(180deg,transparent_0%,rgba(5,10,12,0.28)_100%)] lg:hidden" />
     </section>
   )
 }

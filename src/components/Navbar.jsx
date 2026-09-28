@@ -12,7 +12,7 @@ function MenuIcon() {
 
 function Navbar() {
   return (
-    <header className="relative z-20 h-[3.25rem] border-b border-white/15 bg-[rgba(5,15,20,0.76)] text-white backdrop-blur-[8px] lg:absolute lg:inset-x-0 lg:top-0 lg:h-16 lg:border-none lg:bg-transparent lg:backdrop-blur-none">
+    <header className="absolute inset-x-0 top-0 z-20 h-[3.25rem] border-none bg-transparent text-white backdrop-blur-none lg:h-16">
       <div className="relative mx-auto flex h-full w-full items-center px-5 sm:px-8 lg:px-[3.5%]">
         <a href="#" className="absolute left-1/2 shrink-0 -translate-x-1/2 lg:right-[3.5%] lg:left-auto lg:translate-x-0" aria-label="نامی نور، صفحه اصلی"><img src={namiNoorLogo} alt="نامی نور" className="h-8 w-auto object-contain lg:h-[37px]" /></a>
         <nav aria-label="ناوبری اصلی" className="absolute left-1/2 hidden -translate-x-1/2 lg:block">
